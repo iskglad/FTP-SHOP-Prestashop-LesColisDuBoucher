@@ -1,0 +1,26 @@
+/config/settings.inc.php
+/cache
+/cache/*
+.DS_Store
+.idea
+
+# Ignore everything in the root except modules, themes and override.
+/*
+!modules/
+!themes/
+!override/
+!pdf/
+!config/defines.inc.php
+!.gitignore
+ 
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+ 
+modules/*
+!modules/my-directory-plugin/
+ 
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+ 
+themes/*
+!themes/lcdb_theme/
