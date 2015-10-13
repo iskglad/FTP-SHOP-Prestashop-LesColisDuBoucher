@@ -24,3 +24,5 @@ modules/*
  
 themes/*
 !themes/lcdb_theme/
+themes/lcdb_theme/js/order_delivery_date/get_out_of_delivery_date_products.js
+themes/lcdb_theme/js/order_delivery_date/get_reserved_delivery_date_sync.js

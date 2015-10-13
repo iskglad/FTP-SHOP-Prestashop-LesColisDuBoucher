@@ -601,7 +601,7 @@ class OrderController extends OrderControllerCore
     protected  function _assignFreeShipping(){
         //get delivery postcode
         $delivery_address = new Address($this->context->cart->id_address_delivery);
-        //if no postcode setted
+            //if no postcode setted
         if (!$delivery_address->postcode)
             $delivery_address->postcode = 75000; //set temporary postcode
 
@@ -620,16 +620,16 @@ class OrderController extends OrderControllerCore
         //Temporary solution (hard coding)
         //
         //Hard Code to manage "livraison le soir" and "livraison express" special cases:
-        //"livraison le soir" is a jet carrier, but should be considered as Ecolo for prices
-        //"livraison express" is a UPS carrier, but it has its own free shipping price
-        //(different than Saver which use the normal free shipping for UPS zone
+            //"livraison le soir" is a jet carrier, but should be considered as Ecolo for prices
+            //"livraison express" is a UPS carrier, but it has its own free shipping price
+            //(different than Saver which use the normal free shipping for UPS zone
         //==========
 
         //get Ecolos free_shipping
         $ecolo_zone = new Zone(ID_ZONE_ECOLOTRANS);
 
         //set special free shipping case
-        ////Used to show the good price for "livraison le soir" or "Livraison Express"  (see order-carrier.tpl line 418)
+            ////Used to show the good price for "livraison le soir" or "Livraison Express"  (see order-carrier.tpl line 418)
         $special_case_free_shipping = false;
         if (($id_zone == ID_ZONE_JET && $total_wt >= $ecolo_zone->free_shipping) ||
             ($id_zone == ID_ZONE_UPS && $total_wt >= DELIVERY_FREE_SHIPPING_UPS_EXPRESS))
