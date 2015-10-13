@@ -1,0 +1,250 @@
+
+
+.bloc{
+	border: 1px solid #bead9f;
+	-webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+			border-radius: 8px;
+	padding: 20px;
+	background-color: rgba(255,255,255,.4);
+	min-height: 260px;
+	height: auto !important; /* ie */ 
+  	height: 260px; /* ie */ 
+}
+.ie7 .bloc,
+.ie8 .bloc{
+	background: url('../img/textures/fond_blanc_ie.png') repeat;
+}
+#contact .bloc{
+	width: 666px;
+	margin: auto;
+}
+#contact .bloc:after{
+	content:"";
+	display:block;
+	visibility: hidden;
+	clear: both;
+}
+.ie7 #contact .bloc{
+	overflow: auto;
+}
+.italic{
+	font-style: italic;
+}
+#contact .green{
+	color: #4d9810;
+}
+#contact span.asterisque{
+	color: #ae2b25;
+}
+#contact h1{
+	font-size: 20px;
+	padding-bottom: 10px;
+	margin:0;
+}
+#contact h2{
+	font-size: 18px;
+}
+#contact h3{
+	font-size: 16px;
+}
+#contact form input,
+#contact form select{
+	width: 208px;
+}
+#contact form textarea{
+	padding: 3px;
+	resize: none;
+	border: 1px solid #BCB3A9;
+	margin-bottom: 20px;
+}
+#contact form input:focus,
+#contact form textarea:focus{
+	outline: none;
+	font-size: 16px;
+	border: 1px solid #BA884F; 
+}
+#contact .warning{
+	border: none;
+	background: none;
+	margin:0;
+	padding:0;
+}
+#contact .warning > div{
+	margin: 50px 0px 50px 0px;
+	background: url('../img/asset/img_solo/warning.png') no-repeat 0 center;
+	padding-left: 40px;
+}
+#contact .warning > div p{
+	margin:0;
+	color: #ae2b25;
+}
+#contact .content p{
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+#contact .content p.legend{
+	margin-bottom: 40px;
+}
+#contact .content .justify p{
+	text-align: justify;
+}
+#contact img{
+	margin: 0px 0px 10px 10px;
+	float: right;
+}
+#contact .content .hat{
+	margin: 0px 0px 40px 0px;
+}
+#contact .content p.high_margin{
+	margin-bottom: 45px;
+}
+#contact .content p.last{
+	margin-bottom: 60px
+}
+
+#contact  fieldset {
+	padding:0 0 15px 0;
+	border:1px solid #ccc;
+	background:#f8f8f8
+}
+#contact  h3 {
+	margin:0 0 15px 0;
+	padding:8px;
+	font-size:14px;
+	color:#fff;
+	text-transform:uppercase;
+	background:url(../img/bg_form_h3.png) repeat-x 0 0 #989898
+}
+#contact #center_column p {margin:0; padding:0 0 10px 0;}
+#contact #center_column p.desc_contact { text-align: center; padding-left: 10px; padding-right: 10px; }
+
+#contact p.text label,
+#contact p.select label,
+#contact p.select span,
+#contact p.textarea label {
+	display:inline-block;
+	padding:6px 15px;
+	width:150px;/* 180 */
+	font-size:12px;
+	text-align:right
+}
+#contact p.textarea label {vertical-align:top}
+#contact p.text input,
+#contact p.select input {
+	padding:0 5px;
+	height:22px;
+	width:260px;/* 270 */
+	border:1px solid #ccc;
+	font-size: 12px;
+	color:#666
+}
+#contact p.select select {
+	margin-right:10px;
+	border:1px solid #ccc;
+	font-size: 12px;
+	color:#666
+}
+#contact p.textarea textarea {
+	height:80px;
+	width:270px;
+	border:1px solid #ccc;
+	font-size: 12px;
+	color:#666
+}
+#contact p.submit input {margin-left:185px;}
+
+/* ------------- Ajout ------------*/
+#contact .contact label,
+#contact .contact p{
+	font-size: 14px;
+}
+#contact .contact .hat{
+	margin: 50px 0px 50px 0px;
+}
+#contact .contact p.faq{
+	padding-left: 25px;
+	background: url('../img/asset/img_solo/green-faq.png') no-repeat 0 0;
+}
+#contact .contact form{
+	padding-left: 52px;
+}
+#contact .contact p.mail{
+	background: url('../img/asset/img_solo/green-mail.png') no-repeat 17px top;
+	padding-left: 50px;
+	margin-bottom: 30px;
+}
+#contact .contact p.phone{
+	background: url('../img/asset/img_solo/green-phone.png') no-repeat 23px top;
+	padding: 5px 0px 5px 50px;
+}
+#contact .contact h2{
+	font-size: 16px;
+}
+#contact span.grey{
+	display: block;
+	color: #939190;
+}
+#contact form label{
+	display:block;
+}
+#contact form input,
+#contact form select{
+	width: 298px;
+	margin-bottom: 20px;
+}
+#contact form textarea{
+	padding: 3px;
+	resize: none;
+	border: 1px solid #BCB3A9;
+	height: 148px;
+	margin-bottom: 20px;
+	width: 456px;
+}
+#contact form .select{
+	margin-bottom: 20px;
+}
+#contact form .sbHolder{
+	font-style: italic;
+	height: 23px;
+	outline: none;
+}
+#contact form .sbSelector{
+	line-height: 26px;
+	height: 23px;
+}
+#contact form .sbToggle{
+	height: 23px;
+	background-position: 10px 9px;
+}
+#contact form .sbToggleOpen{
+	background-position: 10px -23px;
+}
+#contact form .sbHolder,
+#contact form .sbSelector,
+#contact form .sbOptions{
+	width: 304px;
+}
+#contact form > .action{
+	width: 100%;
+	border: none;
+	display: block;
+	padding: 0px 0px 30px 0px;
+}
+#contact form > .action button{
+	padding: 8px 25px 8px 25px;
+	width: 194px;
+	display: block;
+}
+.ie7 static form > .action button{
+	width:220px;
+}
+#contact form:after{
+	content:"";
+	display:block;
+	visibility: hidden;
+	clear: both;
+}
+.ie7 #contact form{
+	overflow: auto;
+}

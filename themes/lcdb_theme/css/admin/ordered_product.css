@@ -1,0 +1,159 @@
+/*Global*/
+.hidden{
+    display: none;
+}
+button.left{
+    float:left;
+}
+thead input, thead select{
+    width: 90%;
+}
+table .cmd_link{
+    color: dodgerblue;
+}
+table .cmd_link:hover{
+    text-decoration: underline;
+}
+
+.order-row .updatable{
+    width: 90%;
+    height: 90%;
+    padding: 0.4em;
+}
+.order-row .delivery_hours.updatable{
+    width:70%;
+}
+/*================================
+/*Header
+/*================================*/
+.toolbarBox .process-icon-ecolotrans-etiquette { background-image: url('../../img/admin/logo_ecolotrans.png');}
+.toolbarBox .process-icon-ecolotrans-csv { background-image: url('../../img/admin/logo_ecolotrans_csv.png');}
+.toolbarBox .process-icon-jet-etiquette { background-image: url('../../img/admin/logo_jet.png');}
+.toolbarBox .process-icon-jet-csv { background-image: url('../../img/admin/logo_jet_csv.png');}
+
+
+.toolbarBox .calendar_img .process-icon-save-calendar{
+    margin:0 0;
+    float:left;
+    position: relative;
+    bottom: 1px;
+    margin-right: 1em;
+}
+.toolbarBox .date{
+    height:25px;
+    padding-left: 1em;
+}
+
+.toolbarBox label.interval_label{
+    float:none;
+    line-height: 1em;
+    padding: 0;
+    margin-top:0;
+    margin-left:4em;
+
+}
+
+/*================================
+/*Buyer Row
+/*================================*/
+.buyers{
+    clear: both;
+}
+.buyers table{
+    width: 95%;
+    margin-left: 0%;
+    border-left:2px lightslategrey solid;
+}
+.buyers thead tr th{
+    background: white;
+}
+.buyers thead tr{
+    border-top: 2px darkslategrey solid;
+}
+.buyers .color_field.pro{
+    background-color:deepskyblue;
+    color:white
+}
+.buyers .last{
+    border-bottom: none;
+}
+.buyers a:hover{
+    font-weight: bolder;
+
+}
+
+/*================================
+/*Product Row
+/*================================*/
+
+.product-row .color_field{
+    color:white
+}
+.product-row .color_field.bio{
+    background-color:#10cc10;
+}
+.product-row .color_field.rouge{
+    background-color:#ff0000;
+}
+.product-row .color_field.selection{
+    background-color:darkred;
+}
+.product-row .color_field.salers{
+    background-color:darkorange;
+}
+
+/*================================
+/*Product recap*/
+/*================================*/
+
+.order-row{
+    height: 3.5em;
+}
+
+/*================================
+/*Product recap*/
+/*================================*/
+/*Infos*/
+.recap_infos{
+    width: 25%;
+    float:left;
+}
+.recap_infos > *{
+    margin-bottom: 5px;
+}
+.recap_infos address{
+    margin-bottom: 1.5em;
+}
+.recap_infos .payment{
+    padding:1em;
+    background: dodgerblue;
+    font-weight: bolder;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: white;
+}
+.recap_infos .payment.invalid{
+    background: #dd0000;
+}
+.new_client{
+    padding:0.5em;
+    margin-right:1em;
+    background: goldenrod;
+    font-size: 1.1em;
+    font-weight: bolder;
+    border-radius: 5px;
+    color: white;
+}
+.recap_infos .new_client{
+    margin-left: 0;
+}
+.recap_infos .note{
+    margin-top: 10px;
+    padding: 0.5em;
+    border:dodgerblue 2px solid;
+}
+/*Products*/
+.recap_products{
+    float:right;
+    width: 70%;
+}

@@ -1,0 +1,30 @@
+/* CMS pages ****************************************************************************** */
+#cms #center_column ul,
+#cms #center_column ol,
+#cms #center_column dl { margin-left:25px; margin-bottom:20px }
+
+#cms #center_column li { margin-bottom:5px }
+
+/* ************************************************************************************************
+        Page FAQ
+************************************************************************************************ */
+
+.italique{font-style:italic;}
+
+.lien_vert a{color: #4D9810; line-height:18px;}
+.lien_vert a:hover{text-decoration:none;color: #4D9810;border-bottom: 1px solid #4D9810;}
+.lien_vert a:active{text-decoration:none;color: #4D9810;}
+
+.liste_FAQ li a{text-decoration:underline; cursor:pointer; margin:5px 0 5px 10px;}
+.liste_FAQ li a:hover {color:#a99f95;}
+
+.liste_FAQ div{display:none;margin-left:10px;padding:15px 0 15px 0;text-align:justify;}
+
+h2.titre_vert {
+    color: #4D9810;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 0;
+}

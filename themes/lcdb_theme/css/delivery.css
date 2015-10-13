@@ -1,0 +1,26 @@
+
+/* ************************************************************************************************
+        Page Livraison
+************************************************************************************************ */
+
+/*Bloc du dessus*/
+.bloc_sup_livraison{margin-top:30px;}
+
+.bloc_sup_livraison img{float:left;width:125px;}
+
+.bloc_sup_livraison .bloc_droite{float:right; width:400px; margin-right:130px; border-bottom:1px solid #a1988f;}
+
+.bloc_sup_livraison form{margin-left:95px;}
+.bloc_sup_livraison #code_postal {margin-left:5px;text-align:center; width:80px;}
+#bouton_carre{margin-left:5px; background-color:#E0CEBA; border: 1px solid #FFFFFF; color: #342110; font-size: 13px; padding-right:5px;}
+#bouton_carre:hover {border: 1px solid #79532F; background-color: #342110; color: #C1B9A9;}
+
+/*Bloc du dessous*/
+.bloc_inf_livraison{clear:both;padding-top:30px;}
+
+/*tableau tarifs*/
+.tarifs_livraison{width:100%; border:1px solid #beb6ac;}
+.tarifs_livraison th,.tarifs_livraison td{text-align:center;padding:6px 0 6px 0;}
+.tarifs_livraison th {font-weight:bold;}
+.tarifs_livraison td{border:1px solid #beb6ac;}
+.tarifs_livraison .fond_vert{background-color: rgb(196, 217, 172); background-color: rgba(77, 152, 16, 0.3);}

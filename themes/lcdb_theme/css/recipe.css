@@ -1,0 +1,285 @@
+/* ************************************************************************************************
+		RECIPE PAGE - Elément commun
+************************************************************************************************ */
+#recipe #center_column{
+	width: 696px;
+	background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #BEAD9F;
+    border-radius: 8px 8px 8px 8px;
+	padding: 20px 10px 20px 10px;
+	min-height: 256px;
+}
+#recipe #center_column h1{
+	text-decoration: none;
+    color: #4D9810;
+    font-weight: bold;
+    font-size: 26px;
+	padding: 12px 0px 0px 20px;
+	margin: 0;
+	float: left;
+}
+.ie7 #recipe #center_column h1{
+	padding: 12px 0px 12px 20px;
+}
+#recipe #center_column #difficulte{
+	background: url('../img/asset/img_solo/difficulte.png') no-repeat;
+	padding-left: 24px;
+}
+#recipe #center_column #preparation{
+	background: url('../img/asset/img_solo/preparation.png') no-repeat;
+	padding-left: 19px;
+}
+#recipe #center_column #cuisson{
+	background: url('../img/asset/img_solo/cuisson.png') no-repeat;
+	padding-left: 19px;
+}
+#recipe #center_column #quantite{
+	background: url('../img/asset/img_solo/quantite.png') no-repeat;
+	padding-left: 22px;
+}
+#recipe #center_column .difficulte_level span{
+	display: none;
+}
+#recipe #center_column .difficulte_0{
+	background: url('../img/asset/img_solo/star_0.png') no-repeat center center;
+}
+#recipe #center_column .difficulte_1{
+	background: url('../img/asset/img_solo/star_1.png') no-repeat center center;
+}
+#recipe #center_column .difficulte_2{
+	background: url('../img/asset/img_solo/star_2.png') no-repeat center center;
+}
+#recipe #center_column .difficulte_3{
+	background: url('../img/asset/img_solo/star_3.png') no-repeat center center;
+}
+#recipe #center_column .difficulte_4{
+	background: url('../img/asset/img_solo/star_4.png') no-repeat center center;
+}
+#recipe #center_column .difficulte_5{
+	background: url('../img/asset/img_solo/star_5.png') no-repeat center center;
+}
+/* ************************************************************************************************
+		PAGE LISTE RECETTES
+************************************************************************************************ */
+#recipe #center_column .title span.category{
+	float: left;
+	display: block;
+	width: 96px;
+	height: 56px;
+}
+#recipe #center_column .title span#big_agneau { background: url('../img/asset/img_solo/big_agneau.png') no-repeat; }
+#recipe #center_column .title span#big_boeuf { background: url('../img/asset/img_solo/big_boeuf.png') no-repeat; }
+#recipe #center_column .title span#big_caille { background: url('../img/asset/img_solo/big_caille.png') no-repeat; }
+#recipe #center_column .title span#big_canard { background: url('../img/asset/img_solo/big_canard.png') no-repeat; }
+#recipe #center_column .title span#big_coquelet { background: url('../img/asset/img_solo/big_coquelet.png') no-repeat; }
+#recipe #center_column .title span#big_dinde { background: url('../img/asset/img_solo/big_dinde.png') no-repeat; }
+#recipe #center_column .title span#big_panier { background: url('../img/asset/img_solo/big_panier.png') no-repeat; }
+#recipe #center_column .title span#big_lapin { background: url('../img/asset/img_solo/big_lapin.png') no-repeat; }
+#recipe #center_column .title span#big_pintade { background: url('../img/asset/img_solo/big_pintade.png') no-repeat; }
+#recipe #center_column .title span#big_poisson { background: url('../img/asset/img_solo/big_poisson.png') no-repeat; }
+#recipe #center_column .title span#big_porc { background: url('../img/asset/img_solo/big_porc.png') no-repeat; }
+#recipe #center_column .title span#big_poulet { background: url('../img/asset/img_solo/big_poulet.png') no-repeat; }
+#recipe #center_column .title span#big_veau { background: url('../img/asset/img_solo/big_veau.png') no-repeat; }
+
+#recipe #center_column .title span.cuisson {
+	width: 46px;
+	height: 25px;
+	float: left;
+	margin: 7px 0px 0px 20px;
+}
+
+#recipe #center_column .title span#a-griller{ background: url('../img/asset/img_solo/a_griller.png') no-repeat top center; }
+#recipe #center_column .title span#a-rotir{ background: url('../img/asset/img_solo/a_rotir.png') no-repeat top center; }
+#recipe #center_column .title span#a-mijoter{ background: url('../img/asset/img_solo/a_mijoter.png') no-repeat top center; }
+#recipe #center_column table{
+	width: 700px;
+}
+#recipe #center_column table thead tr th{
+	font-weight: bold;
+}
+#recipe #center_column table thead tr th{
+	padding: 20px 5px 20px 0px;
+}
+#recipe #center_column table thead tr th:first-child{
+	padding: 0px;
+}
+#recipe #center_column table thead tr th span.border-class{
+	display: block;
+	width: 96%;
+	border-bottom: 1px solid black;
+	margin: 0;
+}
+#recipe #center_column table thead tr th{
+	padding-left: 24px;
+}
+#recipe #center_column table tr td:first-child{
+	text-align: left;
+}
+#recipe #center_column table tr td:first-child a{
+	text-decoration: none;
+	font-family: 'MyriadWebPro', Arial, sans-serif;
+}
+#recipe #center_column table tr td:first-child a:hover{
+	color: #4E9912;
+}
+#recipe #center_column table tr td{
+	border-bottom : 1px solid black;
+	padding: 15px 5px 15px 5px;
+	text-align: center;
+}
+#recipe #center_column table tr td.title_recipe{
+	width: 308px;
+}
+#recipe #center_column table tr td.difficulte_level{
+	width: 85px;
+}
+#recipe #center_column table tr td.preparation_time{
+	width: 97px;
+}
+#recipe #center_column table tr td.cooking_time{
+	width: 70px;
+}
+#recipe #center_column table tr td.person_number{
+	width: 80px;
+}
+#recipe #center_column table thead tr th#difficulte{
+	background-position:left center;
+}
+#recipe #center_column table thead tr th#preparation{
+	background-position:left center;
+}
+#recipe #center_column table thead tr th#cuisson{
+	background-position:left 18px;
+}
+#recipe #center_column table thead tr th#quantite{
+	background-position:left center;
+}
+/* ************************************************************************************************
+		PAGE FICHE RECETTE
+************************************************************************************************ */
+#recipe #center_column .backlink a{
+	text-decoration: underline;
+}
+.ie7 #recipe #center_column.recipe_card #presentation ul,
+.ie7 #recipe #center_column.recipe_card .title_print_recipe{
+	overflow: auto;
+}
+#recipe #center_column.recipe_card .title_print_recipe{
+	margin-bottom: 22px;
+	padding-top:5px;
+}
+#recipe #center_column.recipe_card .title_print_recipe:after{
+	content:"";
+	display:block;
+	visibility: hidden;
+	clear: both;
+}
+#recipe #center_column.recipe_card h1{
+	padding:16px 0px 5px 0px;
+	float: left;
+	width:540px;
+}
+#recipe #center_column.recipe_card .title_print_recipe a:hover{
+	text-decoration: none;
+}
+/* --- Content recipe ---*/
+#recipe #center_column.recipe_card{
+    padding: 20px 25px;
+    width: 666px;
+}
+#recipe #center_column.recipe_card #content_recipe{
+	clear:both;
+	margin-bottom: 60px;
+}
+#recipe #center_column.recipe_card #content_recipe div.content{
+	margin-top: 20px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #342110;
+}
+#recipe #center_column.recipe_card #content_recipe div:first-child{
+	border-top: 1px solid #342110;
+	padding-top: 18px;
+	margin-top: 0px;
+}
+#recipe #center_column.recipe_card #content_recipe h2{
+	color: #4D9810;
+	font-size: 16px;
+}
+#recipe #center_column.recipe_card #content_recipe p{
+	margin-bottom:0px;
+}
+#recipe #center_column.recipe_card #presentation{
+	clear:both;
+	padding-bottom:14px;
+}
+#recipe #center_column.recipe_card #presentation ul:after{
+	clear: both;
+	content: "";
+	visibility: hidden;
+	display: block;
+}
+#recipe #center_column.recipe_card #presentation li{
+	float: left;
+	text-align:center;
+	width: 100px;
+	margin-left:50px;
+}
+#recipe #center_column.recipe_card #presentation li span:first-child{
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+#recipe #center_column.recipe_card #presentation li span#difficulte{
+	background-position:8px 14px;
+}
+#recipe #center_column.recipe_card #presentation li span#preparation{
+	background-position:4px 19px;
+}
+#recipe #center_column.recipe_card #presentation li span#cuisson{
+	background-position:14px 18px;
+}
+#recipe #center_column.recipe_card #presentation li span#quantite{
+	background-position:10px 18px;
+}
+#recipe #center_column.recipe_card #presentation li span.difficulte_level{
+	display:block;
+	width: 71px;
+	height: 15px;
+	margin: auto;
+}	
+#recipe #center_column.recipe_card #presentation li span.difficulte_level span{
+	display: none;
+}
+#recipe #center_column.recipe_card #recipe_ingredients ul, 
+#recipe #center_column.recipe_card #recipe_detail ol{
+	padding-left: 15px;
+}
+#recipe #center_column.recipe_card #recipe_ingredients ul li{
+	list-style-type: disc;
+	line-height:1.2em;
+}
+#recipe #center_column.recipe_card #recipe_ingredients ul li span.bold{
+	font-weight: bold;
+}
+#recipe #center_column.recipe_card #recipe_ingredients ul li a{
+	color: #4D9810;
+	text-decoration: underline;
+	font-size: 12px;
+}
+#recipe #center_column.recipe_card #recipe_detail ol{
+	padding-bottom: 14px;
+}
+#recipe #center_column.recipe_card #recipe_detail ol li{
+	color: #4D9810;
+	margin-top: 20px;
+}
+#recipe #center_column.recipe_card #recipe_detail ol li:first-child{
+	margin-top: 0px;
+}
+#recipe #center_column.recipe_card #recipe_detail ol li span{
+	color: #342110;
+}
+#recipe #center_column.recipe_card #content_recipe #recipe_council{
+	padding-bottom: 35px;
+}

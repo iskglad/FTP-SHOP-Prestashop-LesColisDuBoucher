@@ -1,0 +1,358 @@
+/* ************************************************************************************************
+		PAGE CATALOGUE (Liste des produits)
+************************************************************************************************ */
+#category #center_column.page-list-product .big-bloc{
+	padding-left:0px;
+	padding-right:0px;
+}
+/* Titre */
+#center_column .title_list_product p,
+#center_column .title_list_product h1{
+	margin:0;
+	padding:0;
+}
+#center_column .title_list_product{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #342110;
+	margin: 0px 24px 0px 24px;
+}
+#center_column .title_list_product span{
+	display: block;
+	margin: 0px auto 5px auto;
+}
+#center_column .title_list_product #big_pork{
+	background: url("../img/asset/img_solo/big_pork.png") no-repeat;
+    height: 55px;
+    width: 95px;
+}
+#center_column .title_list_product #big_fish{
+	background: url("../img/asset/img_solo/big_fish.png") no-repeat;
+    height: 38px;
+    width: 68px;
+	margin: 10px auto 20px auto;
+}
+#center_column .title_list_product h1{
+	font-family:'MyriadWebPro', Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 16px;
+	text-align:center;
+	text-decoration: none;
+}
+#center_column .title_list_product h1.bon_plan_eleveurs{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#center_column.page-list-product-fish h1{
+	color:#358eda;
+}
+#center_column .title_list_product p{
+	text-align:center;
+    font-style: italic;
+	margin-top: 1px;
+}
+#center_column.page-list-product-fish .title_list_product{
+	padding-bottom: 40px;
+}
+
+/* Lien voir tous details */
+#voir_details {
+    margin-left: 10px;
+    color:red;
+}
+
+/* Tri */
+#center_column .block-sort{
+	margin: 10px 24px 30px 24px;
+}
+#center_column.page-list-product-fish .block-sort{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #342110;
+	margin-bottom: 14px;
+}
+#center_column .block-sort form label,
+#center_column .block-sort form .sbHolder{
+	float:left;
+}
+#center_column .block-sort form:after{
+	content:"";
+	display:block;
+	visibility:hidden;
+	clear:both;
+}
+.ie7 #center_column .block-sort form{
+	overflow: auto;
+}
+#center_column .block-sort form label{
+	margin-right: 10px;
+	padding-top: 6px;
+}
+#center_column select{
+    font-style: italic;
+	padding: 3px;
+	width: 184px;
+}
+/* Liste des produits */
+.list-product{
+	clear:both;
+}
+.list-product p, .list-product h3, .list-product h2{
+	padding: 0;
+	margin:0;
+}
+.list-product .category{
+	margin-top: 20px;
+}
+.list-product .category:first-child{
+	margin-top: 0px;
+}
+.list-product .category-title{
+	padding-bottom: 12px;
+	border-bottom: 1px solid #342110;
+	margin: 0px 24px 0px 24px;
+}
+.list-product .category-title h2{
+	margin-top: 10px;
+	color: #4E9912;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+}
+.list-product .category-title span{
+	display: block;
+	margin: auto;
+}
+.list-product .category-title #griller{
+	background: url('../img/asset/img_solo/gros_a_griller.png') no-repeat 0 0;
+	width: 75px;
+	height: 39px;
+}
+.list-product .category-title #mijoter{
+	background: url('../img/asset/img_solo/gros_mijoter.png') no-repeat 0 0;
+	width: 90px;
+	height: 62px;
+}
+.list-product .category-title #rotir{
+	background: url('../img/asset/img_solo/four.png') no-repeat 0 0;
+	width: 62px;
+	height: 48px;
+}
+.list-product .block-product{
+	padding: 3px 0px 3px 0px;
+	border-bottom: 1px solid #342110;
+}
+.list-product .block-product:first-child{
+	padding-top: 0px;
+}
+.list-product .block-product .identification-description,
+.list-product .block-product .detail{
+	float: left;
+	padding-top: 9px;
+}
+.list-product .block-product .infos,
+.list-product .block-product .action-product{
+	padding: 0px 9px 0px 9px;
+}
+
+.list-product .block-product .infos{
+    display: inline-block;
+    width: 495px;
+    position: relative;
+    cursor: pointer;
+}
+.list-product .block-product .infos:after{
+	content:"";
+	display:block;
+	visibility:hidden;
+	clear:both;
+}
+.ie7 .list-product .block-product .infos{
+	overflow: auto;
+}
+.list-product .block-product .identification-description{
+	width:324px;
+	/*height: 90px;*/
+    padding-top: 0;
+
+}
+.list-product .block-product .identification{
+	margin-bottom: 10px;
+}
+.list-product .block-product .identification a{
+    outline: 0;
+}
+.list-product .block-product .identification h3{
+	font-size: 18px;
+}
+.list-product .block-product .identification p{
+	font-size: 13px;
+    font-style: italic;
+	/*height: 30px;*/
+}
+.list-product .block-product .identification-description .label-rouge{
+	background: url('../img/asset/img_solo/petit_label_rouge.png') no-repeat left 2px;
+	padding-left: 45px;
+}
+.list-product .block-product .identification-description .label-bio{
+	background: url('../img/asset/img_solo/petit_label_bio.png') no-repeat top left;
+	padding-left: 35px;
+}
+
+.list-product .block-product .detail{
+	/*width: 50px;
+	margin-left: 7px;*/
+    float: right;
+    padding-top: 0px;
+}
+.list-product .block-product .detail span{
+	font-size: 16px;
+    font-style: italic;
+    display: inline-block;
+}
+.list-product .block-product .detail span{
+	background: url('../img/asset/img_solo/jours.png') no-repeat left 2px;
+	padding: 5px 10px 5px 23px;
+    /*width: 2em;*/
+}
+.list-product .block-product .detail span:first-child{
+	background: url('../img/asset/img_solo/silhouette.png') no-repeat 3px 3px;
+	padding-left: 26px;
+}
+.list-product .block-product .price{
+	float:right;
+	width:112px;
+	padding-top: 9px;
+}
+.list-product .block-product .price:after{
+	content:"";
+	display: block;
+	visibility:hidden;
+	clear: both;
+}
+.ie7 .list-product .block-product .price{
+	overflow: auto;
+}
+.list-product .block-product .reduction{
+	padding-top: 2px;
+    position: absolute;
+    bottom: 3px;
+    right: 154px;
+}
+.list-product .block-product .price p.reduction_rate{
+	padding: 2px 2px 1px 2px;
+	background-color: white;
+	border: 1px solid #4E9912;
+	display:block;
+	text-align:center;
+	width:42px;
+	margin: 0px auto 0px auto;
+	color: #4d9810;
+	font-weight: bold;
+}
+.page-list-product-fish .list-product .block-product .price p.reduction_rate{
+	color: #358eda;
+}
+.list-product .block-product .price p{
+	text-align:center;
+}
+
+.page-list-product-fish .list-product .block-product .price .selling_price p{
+	color: #358eda;
+}
+.list-product .block-product .price p.price-piece{
+	font-size: 28px;
+	font-weight: bold;
+}
+.list-product .block-product .reduction .full_price,
+
+.list-product .block-product .reduction .full_price{
+	margin-right: 10px;
+}
+.list-product .block-product .reduction .full_price p{
+	text-decoration:line-through;
+	color: #4E9912;
+}
+.page-list-product-fish .list-product .block-product .reduction .full_price p{
+	color: #358eda;
+}
+
+.list-product .block-product .product-link{
+    color: #4E9912;
+    font-weight: bolder;
+	text-decoration:none;
+    margin-left: 10px;
+}
+.list-product .block-product .product-link.more-details{
+     margin-left: 0px;
+    margin-bottom: 0.5em;
+    color: #4E9912;
+    font-style: italic;
+    font-weight: normal;
+ }
+.block-sort #form-search #search.search_query{
+    width: 364px;
+    font-style: italic;
+    box-sizing: content-box;
+}
+/*more product*/
+.list-product .more-product{
+    background: url('../img/asset/img_solo/question.png') no-repeat left top;
+    padding: 10px 0px 10px 60px;
+    margin: 50px 0px 30px 20px;
+}
+.list-product .more-product p.blod{
+    font-weight: bold;
+}
+.list-product .more-product p a{
+    color: #4D9810;
+    text-decoration: none;
+}
+.list-product .more-product p a:hover{
+    text-decoration: underline;
+}
+.list-product .more-product p{
+    font-style: italic;
+}
+/************
+YMLB
+************/
+#big_le-bourdonnec{
+	background: url('../img/photos/ymlb-photo.png') no-repeat 0 0;
+	height: 255px!important;
+	width: auto!important;
+	background-size: contain!important;
+	background-position: center;
+}
+.ymlb-hide{
+	display:none!important;
+}
+
+.ymlb-show{
+	display:block!important;
+}
+
+.ymlb-info{
+    display: inline-block;
+    width: 495px;
+    position: relative;
+	margin-left:3px;
+}
+
+.ymlb-product-desc p{
+	text-align: left;
+    font-style: italic;
+	height:auto!important;
+}
+.ymlb-product-photo{
+	height:auto!important;
+	float: left;
+}
+.ymlb-product-photo img{
+	height:auto!important;
+	width:auto!important;
+	max-height:125px!important;
+	margin-right: 10px!important;
+}
+
+.price-kg-ymlb{
+	margin-top:20px;
+}

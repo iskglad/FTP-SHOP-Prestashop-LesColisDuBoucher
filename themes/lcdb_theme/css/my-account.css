@@ -1,0 +1,105 @@
+#module-referralprogram-program #center_column,
+#my-account #center_column {
+    width:712px;
+    margin: 0 24px 0 12px;
+}
+
+#my-account #center_column .step .left-side {
+    border-right: 1px solid #6E503B;
+    margin-right: 20px;
+}
+
+#my-account #left_column .secondary-menu .secondary-menu-item {
+    text-align: left;
+}
+
+#my-account #left_column .secondary-menu .secondary-menu-item a {
+    padding-left: 5px;
+}
+
+#my-account #left_column .submenu-item {
+    padding-left: 19px;
+}
+
+/* ************************************************************************************************
+        PAGE mon compte
+************************************************************************************************ */
+#my-account hr.mon-compte {
+    margin-top: 80px;
+}
+
+#message_alert_import {
+    margin-top:15px;
+    color:red;
+    font-size:1.2em;
+}
+
+/* ************************************************************************************************
+        Page parrainage
+************************************************************************************************ */
+
+
+/*boutons top*/
+.menu_parrainage{margin-top:30px; margin-bottom:30px;}
+.menu_parrainage li{float: left; border:1px solid #8f8a84; padding:5px; width:150px; text-align:center; margin:0px; color:#b1a9a1; cursor:pointer;}
+.menu_parrainage #first_li {background:#4d9810; color:#ffffff;}
+.menu_parrainage #second_li {border-left:none; border-right:none;}
+
+/*onglets*/
+.parrainage_bloc_first_li, .parrainage_bloc_second_li, .parrainage_bloc_third_li{position:absolute; width:662px;}
+.parrainage_bloc_second_li, .parrainage_bloc_third_li{display:none;}
+
+/*labels du formulaire*/
+.labels_parrainage{margin-top:20px; margin-bottom:5px;}
+
+/*input text*/
+#bloc_nom input[type=text], #bloc_prenom input[type=text], #bloc_mail input[type=text]{width:100%;}
+
+.parrainage_bloc_first_li form { margin-top: 25px; }
+
+.parrainage_bloc_first_li table td { padding: 5px 0; }
+
+.parrainage_bloc_first_li table label,
+.parrainage_bloc_first_li table input { display: block; margin-bottom: 5px; }
+
+/*bloc nom&prenom*/
+.parrainage_bloc_first_li table .friendsLastName,
+.parrainage_bloc_first_li table .friendsFirstName {width:190px;}
+
+.parrainage_bloc_first_li table .friendsLastName input,
+.parrainage_bloc_first_li table .friendsFirstName input { width: 162px; }
+
+/*bloc e-mail*/
+.parrainage_bloc_first_li table .friendsEmail {width:260px;}
+.parrainage_bloc_first_li table .friendsEmail input { width: 262px; }
+
+/*bloc de texte inf�rieur*/
+.clear_both{clear:both;padding-top:30px;}
+.lien_vert a{color: #4D9810; line-height:18px;}
+.lien_vert a:hover{text-decoration:none;color: #4D9810;border-bottom: 1px solid #4D9810;}
+.lien_vert a:active{text-decoration:none;color: #4D9810;}
+
+/*bouton submit*/
+#parrainage_submit,
+#relancer_amis_submit { margin-top:15px; text-align: center;}
+
+
+/*tableau*/
+#table_relancer_amis, #table_amis_parraines{width:100%;table-layout:fixed;}
+#table_relancer_amis tr, #table_amis_parraines tr{height:45px;}
+#table_relancer_amis th, #table_amis_parraines th{font-weight:bold;}
+#table_relancer_amis td, #table_amis_parraines td{border-top:1px solid #8f8a84 ;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+
+/*largeur des colonnes*/
+#table_relancer_amis .first_row{width:40px;}
+#table_relancer_amis .second_row{width:130px;}
+#table_relancer_amis .third_row{width:130px;}
+#table_relancer_amis .fourth_row{width:220px;}
+#table_relancer_amis .last_row{width:130px;}
+
+/*largeur des colonnes*/
+#table_amis_parraines .first_row{width:100px;}
+#table_amis_parraines .second_row{width:100px;}
+#table_amis_parraines .third_row{width:160px;}
+#table_amis_parraines .fourth_row{width:90px;}
+#table_amis_parraines .last_row{width:190px;}

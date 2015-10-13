@@ -1,0 +1,132 @@
+
+#address #center_column {
+    width: 712px;
+    margin: 0 24px 0 12px;
+}
+
+#address #center_column.address .big-bloc{
+    padding: 20px;
+}
+
+#address .address p.information{
+    border-bottom: 1px solid #342110;
+    padding-bottom: 5px;
+}
+#address .address .big-bloc > p.information{
+    margin-bottom: 40px;
+}
+
+#address .address h1{
+    margin-bottom: 0px;
+}
+#address .address .big-bloc > p{
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+#address .address p.information{
+    border-bottom: 1px solid #342110;
+    padding-bottom: 5px;
+}
+#address .address .big-bloc > p.information{
+    margin-bottom: 40px;
+}
+#address .address span.asterisque{
+    color: #ae2b25;
+}
+#address .address .big-bloc form > div{
+    float: right;
+    width: 306px;
+}
+#address .address form label{
+    display:block;
+}
+#address .address form label[for="address_title"]{
+    position: absolute;
+}
+#address .address form input,
+#address .address form select,
+#address .address form textarea{
+    width: 298px;
+    margin-bottom: 20px;
+}
+#address .address form input#address_title{
+    margin-top: 16px;
+}
+#address .address form input#mobile{
+    margin-bottom: 14px;
+}
+#address .address form textarea{
+    padding: 3px;
+    resize: none;
+    border: 1px solid #BCB3A9;
+    height: 70px;
+}
+#address .address form .select{
+    margin-bottom: 20px;
+}
+#address .address form .select label{
+    display:inline-block;
+    vertical-align: top;
+    padding: 5px 3px 0px 0px;
+}
+#address .address form .sbHolder{
+    font-family: 'MyriadWebPro';
+    display: inline-block;
+}
+#address .address form .sbHolder,
+#address .address form .sbSelector,
+#address .address form .sbOptions{
+    width: 95px;
+}
+#address .address form input:focus,
+#address .address form textarea:focus{
+    outline: none;
+    border: 1px solid #BA884F; 
+}
+#address .address .big-bloc form > div:first-child{
+    float: left;
+}
+#address .address .big-bloc form > div + div{
+    border-bottom: 1px solid #342110;
+}
+#address .address .big-bloc form > .action{
+    clear: both;
+    width: 100%;
+    float: none;
+    border: none;
+    display: block;
+    padding-top: 25px;
+}
+#address .address .big-bloc form > .action button{
+    padding: 8px 25px 8px 25px;
+    width: 194px;
+    margin: auto;
+    display: block;
+}
+.ie7 #address .address .big-bloc form > .action button{
+    width:220px;
+}
+#address .address .big-bloc form:after{
+    content:"";
+    display:block;
+    visibility: hidden;
+    clear: both;
+}
+.ie7 #address .address .big-bloc form{
+    overflow: auto;
+}
+#address .address .warning{
+    border: none;
+    background: none;
+    margin:0;
+    padding:0;
+}
+#address .address .warning > div{
+    margin: 50px 0px 50px 0px;
+    background: url('../img/asset/img_solo/warning.png') no-repeat 0 center;
+    padding-left: 40px;
+}
+#address .address .warning > div p{
+    margin:0;
+    color: #ae2b25;
+}

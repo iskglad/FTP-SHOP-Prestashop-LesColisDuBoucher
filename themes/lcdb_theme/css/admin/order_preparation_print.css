@@ -1,0 +1,92 @@
+/*=======================================================
+* CSS for printing preparation page
+*=======================================================*/
+
+@media print{
+    /*HEADER AND FOOTER*/
+    /*=======================================================*/
+    #header, #footer, .interval_label, .cc_button {
+        display: none;
+    }
+
+    fieldset{
+        background: white;
+        color:black;
+    }
+    /*TABLE*/
+    /*=======================================================*/
+    /* Header*/
+    .table_grid > tbody > tr:first-of-type, img{
+        display:none;
+    }
+    .filter {
+        display: none;
+    }
+    /* Order Row */
+    .action{
+        display:none;
+    }
+    .new_client{
+        padding:0;
+        font-weight: bolder;
+        margin:0;
+        margin-right: 5px;
+        color:black;
+        background: white;
+    }
+    .order-row {
+        height: inherit;
+    }
+    .order-row td{
+        border-top: 2px solid black;
+    }
+    .order-row input{
+        padding: 0;
+        width: 100px;
+    }
+    .order-row .delivery_hours.updatable {
+        width: inherit;
+    }
+    .order-row .updatable {
+        width: inherit;
+        height: inherit;
+        padding: 0;
+    }
+    table *, .table *, tr, .table tr th, .table tr td{
+        font-size: 10px;
+        color:black;
+    }
+
+    /* Buyer row*/
+    .cmd_link.updatable{
+        display: none;
+    }
+    .table tr.products-recap > td{
+        padding-bottom: 10px;
+    }
+    .recap_products th{
+        border-bottom: 1px solid black;
+    }
+    .recap_infos .payment {
+        padding: 0;
+        background: none;
+        font-weight: bolder;
+        font-size: 10px;
+        color: #000000;
+    }
+
+    .recap_infos .note{
+        border: black 1px;
+        margin-top: 0;
+        padding: 0;
+    }
+    .recap_infos address {
+        margin-bottom: 0;
+    }
+
+    .table tr td {
+        border-bottom: 1px solid #000000;
+        color: #000000;
+        padding: 0;
+    }
+}

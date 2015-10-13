@@ -1,0 +1,581 @@
+#product .big-bloc {
+    padding: 14px;
+}
+#product #item {
+    margin-top: 30px;
+}
+#product #product-image,
+#product #main-product-infos {
+    float: left;
+}
+
+#product #product-image {
+    width: 177px;
+    margin-right: 13px;
+    padding-top: 4px;
+}
+
+#product #product-image img {
+    border-top: 1px solid #a1968c;
+    border-bottom: 1px solid #a1968c;
+    max-height: 110px;
+    max-width: 160px;
+}
+
+#product #main-product-infos {
+    width: 293px;
+}
+
+#product #item h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4d9810;
+    text-decoration: none;
+    margin-bottom: 4px;
+}
+
+#product .full-description p {
+    margin-bottom: 0;
+    font-size: 13px;
+    font-style: italic;
+}
+
+#product .price-info {
+    margin-bottom: 30px;
+}
+
+#product .choix-race {
+    width: 177px;
+    height: 22px;
+    float: left;
+    margin-right: 13px;
+    padding-top: 143px;
+}
+
+#product .choix-race p {
+    float: left;
+    margin-right: 8px;
+    line-height: 25px;
+}
+
+#product .sbHolder {
+    float: left;
+    position: relative;
+    width: 138px;
+}
+
+#product .sbOptions { width: 138px; }
+#product .sbSelector { width: 108px; }
+
+#product .add-to-basket-form {
+    width: 293px;
+    padding-top: 50px;
+    float: left;
+}
+
+#product .add-to-basket-form.alerte { padding-top: 0; }
+
+#product .add-to-basket-form .alerte-message {
+    padding: 27px 0;
+}
+
+#product .add-to-basket-form .alerte-message p { margin: 5px auto 0; color: #d44137; }
+
+#product .add-to-basket-form .alerte-message span.img-warning {
+    float: left;
+    width: 29px;
+    height: 24px;
+    background: url('../img/asset/img_solo/warning.png') no-repeat;
+    margin: 5px 12px 0 0;
+}
+
+#product .add-to-basket-form .label {
+    float: left;
+    margin-left: 3px;
+    width: 53px;
+    height: 64px;
+}
+
+#product .add-to-basket-form .detailed-price {
+    height: 64px;
+    margin-left: 16px;
+    float: left;
+}
+
+#product .add-to-basket-form .detailed-price .price {
+    font-weight: bold;
+    color: #4d9810;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+#product .colis-surprise .detailed-price.promo,
+#product .add-to-basket-form .detailed-price.promo { position: relative; }
+
+#product .colis-surprise .detailed-price.promo { margin-top: 10px; }
+
+#product .colis-surprise .detailed-price.promo .reduction,
+#product .add-to-basket-form .detailed-price.promo .reduction { 
+    position: absolute;
+    border: 1px solid #4d9810;
+    color: #4d9810;
+    font-size: 13px;
+    font-weight: bold;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    background-color: #fff;
+    width: 40px;
+    left: 50%;
+    top: -20px;
+    margin-left: -15px;
+}
+
+#product .add-to-basket-form .detailed-price.promo .old-price,
+#product .add-to-basket-form .detailed-price.promo .new-price {
+    /*height: 64px;*/
+    width: 50%;
+    float: left;
+    text-align: center;  
+}
+
+.ie7 #product .add-to-basket-form .detailed-price.promo .old-price,
+.ie7 #product .add-to-basket-form .detailed-price.promo .new-price {
+    width: 49%;
+}
+
+#product .colis-surprise .detailed-price.promo .old-price,
+#product .colis-surprise .detailed-price.promo .new-price {
+    height: 40px;
+    width: 50%;
+    float: left;
+    text-align: center;  
+}
+
+.ie7 #product .colis-surprise .detailed-price.promo .old-price,
+.ie7 #product .colis-surprise .detailed-price.promo .new-price {
+    width: 49%;
+}
+
+#product .colis-surprise .detailed-price.promo .old-price,
+#product .add-to-basket-form .detailed-price.promo .old-price {
+    text-decoration: line-through;
+    color: #4d9810;
+}
+
+#product .colis-surprise .detailed-price.promo .old-price .price,
+#product .add-to-basket-form .detailed-price.promo .old-price .price {
+    color: #ab9583;
+}
+
+#product .add-to-basket-form .detailed-price.promo .old-price .price-kg {
+    color: #342110;
+}
+
+#product .form-panier {
+    margin-top: 18px;
+}
+
+#product .form-panier input {
+    line-height: 32px;
+    margin-top: 1px;
+}
+.ie7 #product .form-panier input,
+.ie8 #product .form-panier input {
+    height: 32px;
+}
+
+#product .img-cuisson {
+    display: inline-block;
+    vertical-align: top;
+    width: 22px;
+    height: 21px;
+    background: url('../img/asset/img_solo/mode-cuisson.png') no-repeat;
+}
+
+#product .mode-cuisson {
+    font-size: 13px;
+    font-style: italic;
+}
+
+#product .jours {
+    border-right: 1px solid #342110;
+}
+
+#product .misc-infos {
+    margin: 40px 0;
+    zoom: 1;
+}
+
+#product .misc-infos p {
+    width: 33%;
+    margin-bottom: 0;
+}
+
+#product span.img-mot-eleveur,
+#product span.img-idees-recettes,
+#product span.img-trucs-astuces {
+    float: left;
+    display: inline; /* ie */
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+}
+
+#product span.img-mot-eleveur {
+    background: url('../img/asset/img_solo/mot-eleveur.png') no-repeat;
+}
+
+#product span.img-idees-recettes {
+    background: url('../img/asset/img_solo/idees-recettes.png') no-repeat;
+}
+
+#product span.img-trucs-astuces {
+    background: url('../img/asset/img_solo/trucs-astuces.png') no-repeat;
+}
+
+#product h2 {
+    font-size: 16px;
+    font-style: italic;
+    margin-left: 5px;
+    color: #604e3e;
+    line-height: 28px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+#product h4,
+#product h3 {
+    font: 14px 'MyriadWebPro', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#product h4 {
+    margin-bottom: 10px;
+}
+
+#product #idees-recettes ul {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+#product #idees-recettes ul.ingredients {
+    width: 466px;
+    position: relative;
+    zoom: 1;
+}
+
+#product #idees-recettes ul.recette {
+    position: relative;
+    zoom: 1;
+}
+
+#product #idees-recettes li {
+    position: relative;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+#product #idees-recettes ul.ingredients li {
+    width: 227px;
+    float: left;
+    display: inline;
+    margin-bottom: auto;
+}
+
+#product #idees-recettes li a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #4d9810;
+}
+
+#product .intitule,
+#product .difficulte_level {
+    float: left;
+    color: #4d9810;
+}
+
+#product .difficulte_level { width: 56px; height: 12px; margin: 2px 0 0 5px; font-size: 0; text-indent: 99999px; }
+
+#product .difficulte_0 { background: url('../img/asset/img_solo/small_star_0.png') no-repeat; }
+#product .difficulte_1 { background: url('../img/asset/img_solo/small_star_1.png') no-repeat; }
+#product .difficulte_2 { background: url('../img/asset/img_solo/small_star_2.png') no-repeat; }
+#product .difficulte_3 { background: url('../img/asset/img_solo/small_star_3.png') no-repeat; }
+#product .difficulte_4 { background: url('../img/asset/img_solo/small_star_4.png') no-repeat; }
+#product .difficulte_5 { background: url('../img/asset/img_solo/small_star_5.png') no-repeat; }
+
+/* ************************************************************************************************
+        STYLE DU PRODUIT - COLIS CADEAU / SURPRISE
+************************************************************************************************ */
+
+.colis hr {
+    margin: 25px 0;
+}
+
+.price-infos .price{
+    font-weight: bold;
+    color: #4d9810;
+    font-size: 30px;
+}
+
+#product .form-panier input {
+    line-height: 32px;
+    height: 32px;
+    margin-top: 1px;
+}
+.ie7 #product .form-panier input,
+.ie8 #product .form-panier input {
+    height: 32px;
+}
+
+#product .form-panier .ajout-panier {
+    margin-left: 11px;
+}
+
+
+#product .add-to-basket-form {
+    max-width: none;
+}
+
+#product .form-panier .sbHolder{
+    float: left;
+    position: relative;
+    width: 160px;
+    margin-right: 20px;
+}
+#product .form-panier .sbOptions,
+#product .form-panier .sbSelector{
+    width: 160px;
+}
+
+#product .promo .price-details {
+    margin: 36px 0 27px 0px;
+    float: left;
+    width: 287px;
+}
+#product .promo .price-details {
+    margin: 0px 0 27px 0px;
+    float: left;
+    width: 287px;
+}
+#product .price-details{
+    margin: 0px 0 30px 0;
+}
+.misc-infos{
+    margin: 38px 0;
+}
+.misc-infos p{
+    font-weight: bold;
+    font-size: 19px;
+    color: #604e3e;
+    float: left;
+    text-align: center;
+}
+.misc-infos .portions{
+    width: 232px;
+    border-right: 1px solid #342110;
+}
+.misc-infos .jours{
+    width: 233px;
+}
+.colis-portions,
+.colis-jours{
+    font-size: 13px;
+    font-style: italic;
+}
+.img-portions{
+    display: inline-block;
+    vertical-align: top;
+    width: 34px;
+    height: 21px;
+    background: url('../img/asset/img_solo/portions.png') no-repeat;
+}
+.img-jours{
+    display: inline-block;
+    vertical-align: top;
+    width: 34px;
+    height: 21px;
+    background: url('../img/asset/img_solo/jours.png') no-repeat;
+}
+.colis-description{
+    text-align: justify;
+}
+.colis-description ul li{
+    list-style-type: disc;
+    list-style: disc;
+    list-style-position: inside;
+}
+.colis-description p,
+.colis-description li{
+    margin-bottom: 20px;
+}
+.colis-description li.last{
+    margin-bottom: 0;
+}
+
+.colis-surprise-description{
+    float: left;
+    width: 287px;
+    font-size: 14px;
+    font-style: italic;
+    text-align: justify;
+    margin-bottom: 13px;
+}
+
+.colis-exemples ul{
+    margin-left: 32px;
+}
+.colis-exemples hr{
+    width: 190px;
+    margin: 10px auto;
+}
+
+
+.form-panier .ajout-panier{
+    padding: 6px 32px;
+    font-size: 16px;
+    margin-left: 14px;
+}
+
+.ie7 .form-panier .ajout-panier,
+.ie8 .form-panier .ajout-panier{
+    width: 207px;
+    text-align: center;
+    padding: 6px 0;
+    zoom: 1;
+}
+
+.add-to-basket-form{
+    max-width: 287px;
+}
+.add-to-basket-form .form-panier button,
+.add-to-basket-form .form-panier input {
+    float: left;
+}
+.ie7 .add-to-basket-form .form-panier{
+    margin-top: 35px;
+}
+.form-panier select{
+    width: 160px;
+    margin-right: 16px;
+}
+.price-details{
+    margin: 38px 0 41px 0;
+}
+.promo .price-details{
+    margin: 0px 0 31px 0;
+}
+.price-infos .add-to-basket-form,
+.price-infos img{
+    float: left;
+}
+.price-infos img{
+    margin-right: 19px;
+}
+.promotion{
+    float: left;
+    width: 150px;
+    color: #4d9810;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: justify;
+    margin: 9px 0 0 0;
+}
+.detailed-price{
+    float: right;
+    text-align: center;
+    width: 207px;
+}
+.promo .detailed-price{
+    width: auto;
+}
+.detailed-price span{
+    display: block;
+}
+
+#product .colis .add-to-basket-form {
+    padding-top: 56px;
+}
+
+#product .colis .add-to-basket-form .detailed-price {
+    float: none;
+    margin: 0 0 0 71px;
+    height: auto;
+}
+
+#product .colis-surprise .detailed-price.promo .old-price,
+#product .colis .add-to-basket-form .detailed-price.promo .new-price {
+    height: 40px;
+}
+
+#product .colis .price-details {
+    margin: 0;
+    height: 40px;
+}
+
+#product .colis .misc-infos p {
+    width: 49%;
+    margin-bottom: 0;
+}
+
+#product .colis .jours {
+    border-right: none;
+}
+
+#product .colis-surprise .price-details {
+    float: left;
+    margin-left: 74px;
+    height: auto;
+}
+
+#product .colis-surprise .detailed-price {
+    float: none;
+}
+
+#product .colis-surprise .add-to-basket-form {
+    width: 100%;
+    padding-top: 0;
+    float: none;
+}
+
+#product .colis-surprise .form-panier .sbHolder {
+    margin-top: 6px;
+}
+
+
+
+/* ************************************************************************************************
+        Push Frais de livraison
+************************************************************************************************ */
+
+.push-frais-livraison #form-code-postal label{font-size:12px;}
+#push-code-postal{width:45px; margin-right:3px;}
+
+.no-padding{position:absolute; padding-top:10px; left:0px; color:#ae2b25;}
+.re-padding{margin:0; border:0; padding:0; clear:both; float:none; font-size:1px;}
+
+.push-frais-livraison table{margin-top:45px; margin-bottom:15px;}
+.push-frais-livraison table th{color:#897d71; padding-bottom:5px;}
+.push-frais-livraison table td {padding-top:10px; font-size:12px;}
+.col_1{text-align:right; border-right:1px solid #beb5ac; padding-right:7px;}
+.col_2{text-align:left; border-left:1px solid #ded9d2; padding-left:7px;}
+
+.gras{font-weight:bold;}
+.rouge{font-weight:bold; color:#a32519;}
+
+.push-frais-livraison a {font-size:12px;}
+.push-frais-livraison table a {font-size:9px;}
+.italique{font-style:italic;}
+.lien_vert a{color: #4D9810; line-height:18px; }
+.lien_vert a:hover{text-decoration:none;color: #4D9810;border-bottom: 1px solid #4D9810;}
+.lien_vert a:active{text-decoration:none;color: #4D9810;}
+
+/* ************************************************************************************************
+        Push Mot du boucher
+************************************************************************************************ */
+
+.img_center{width:31px; margin:0 auto;}
+.img_center_2{width:50px; margin:0 auto;}

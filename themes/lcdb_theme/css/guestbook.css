@@ -1,0 +1,157 @@
+
+/* --------- Page Témoignage (ou livre d'or ) ----------*/
+
+.bloc{
+	border: 1px solid #bead9f;
+	-webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+			border-radius: 8px;
+	padding: 20px;
+	background-color: rgba(255,255,255,.4);
+	min-height: 260px;
+	height: auto !important; /* ie */ 
+  	height: 260px; /* ie */ 
+}
+.ie7 .bloc,
+.ie8 .bloc{
+	background: url('../img/textures/fond_blanc_ie.png') repeat;
+}
+#guestbook .bloc{
+	width: 666px;
+	margin: auto;
+}
+#guestbook .bloc:after{
+	content:"";
+	display:block;
+	visibility: hidden;
+	clear: both;
+}
+.ie7 #guestbook .bloc{
+	overflow: auto;
+}
+
+#guestbook .guestbook  a[href="#button-witness"]{
+	text-decoration: underline;
+}
+#guestbook .guestbook .person-witness p{
+	margin: 0;
+	display: inline;
+}
+#guestbook .guestbook .person-witness{
+	margin-bottom: 20px;
+}
+#guestbook .guestbook .person-witness p.name-witness{
+	color: #ab9482;
+}
+#guestbook .guestbook #button-witness a{
+	display: block;
+	font-size: 14px;
+	width: 164px;
+	margin: 0px auto 50px auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	text-rendering: optimizeLegibility;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+#guestbook .guestbook .comment{
+	margin-left: 90px;
+}
+#guestbook .guestbook .comment form p{
+	margin-bottom: 15px;
+}
+#guestbook .guestbook .comment form p.last{
+	margin-bottom: 0px;
+}
+#guestbook form input,
+#guestbook form select{
+	width: 208px;
+}
+
+#guestbook .guestbook .comment label{
+	width: 113px;
+	display: inline-block;
+    
+}
+#guestbook label{
+    display: block;
+}
+#guestbook .witness{
+padding: 30px 15px;
+border-radius: 5px;
+box-shadow: inset 0 1px 0 rgba(170, 130, 93, 0.39), -1px -1px 7px rgba(121, 83, 47, 0.3);
+border-top-color: rgba(121, 83, 47, 0.62);
+border-width: 11px;
+left: 65%;
+margin-left: -11px;
+}
+
+#guestbook .name-witness{
+    
+font-weight: 700;
+font-size: 18px;
+color: #4D9810;
+text-shadow: 0 1px 1px rgba(255,255,255,0.7);
+margin-top: -27px;
+}
+
+#guestbook #form-witness {
+padding-left: 52px;
+}
+#guestbook .information{
+    margin-top:30px;
+}
+#guestbook form textarea {
+padding: 3px;
+resize: none;
+border: 1px solid #BCB3A9;
+height: 148px;
+margin-bottom: 20px;
+width: 456px;
+}
+#guestbook form input, #guestbook form select {
+width: 298px;
+margin-bottom: 10px;
+}
+#guestbook .guestbook .comment #e-mail{
+	width: 250px;
+}
+#guestbook .guestbook .comment textarea{
+	width: 355px;
+	height: 115px;
+	padding: 4px;
+	margin: 0;
+}
+#guestbook .guestbook .comment .action{
+	margin: 15px 0px 0px 113px;
+}
+#guestbook .guestbook .comment .action button{
+	width: 180px;
+	text-rendering: optimizeLegibility;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+#guestbook .guestbook .comment .success{
+	background-color: transparent;
+	border: none;
+}
+#guestbook .guestbook .comment .success p{
+	padding:0px 0px 0px 40px;
+	margin: 0;
+}
+#guestbook .guestbook .comment .success p.thanks{
+	margin: 20px 0px 20px 0px;
+}
+#guestbook .guestbook .comment p.message-success{
+	background: url('../img/asset/img_solo/check.png') no-repeat 0 0;
+	padding: 18px 0px 10px 40px;
+}
+#guestbook input,
+#guestbook input:focus {
+	font-size: 13px;
+}
+
+#guestbook .warning { display: none; }
+#guestbook .warning p { margin-bottom: 10px; }
+#guestbook .warning p:last-child { margin-bottom: 0; }

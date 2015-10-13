@@ -1,0 +1,345 @@
+#subscription #center_column {
+    width: 712px;
+    margin: 0 24px 0 12px;
+}
+
+/* ************************************************************************************************
+        PAGE abonnement
+************************************************************************************************ */
+#subscription #center_column h2.green-title {
+    margin-bottom: 0;
+    line-height: 22px;
+    font-weight: normal;
+}
+#subscription #abonnement-box {
+    float: left;
+    margin: 0 30px 10px 30px;
+}
+#subscription .img-step {
+    display: block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin-right: 10px;
+}
+
+#subscription .step {
+    margin: 15px 0;
+}
+
+.ie7 #subscription .step {
+    margin: 20px 0;
+}
+
+#subscription .img-step-1 { background: url('../img/asset/img_solo/abonnement-1.png') no-repeat; }
+#subscription .img-step-2 { background: url('../img/asset/img_solo/abonnement-2.png') no-repeat; }
+#subscription .img-step-3 { background: url('../img/asset/img_solo/abonnement-3.png') no-repeat; }
+#subscription .img-step-4 { background: url('../img/asset/img_solo/abonnement-4.png') no-repeat; }
+
+#subscription .step ul,
+#subscription .step .left-side,
+#subscription .step .right-side,
+#subscription .step .left-side p,
+#subscription .step .left-side ul {
+    float: left;
+}
+
+#subscription .step .frequence-list {
+    width: 115px;
+    margin-left: 7px;
+}
+
+#subscription .step .left-side ul li {
+    margin-bottom: 5px;
+}
+
+#subscription .step .left-side {
+    width: 195px;
+}
+
+#subscription #center_column .step .left-side.last-step {
+    width: auto;
+    border: none;
+    margin-right: 0;
+}
+
+#subscription .step .colis-label {
+    margin-right: 20px;
+}
+
+#subscription .step .notes {
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 12px;
+}
+
+#subscription #step1 .right-side ul,
+#subscription #step1 .right-side select,
+#subscription #step1 .right-side label,
+#subscription #step1 .right-side p {
+    float: left;
+}
+
+#subscription #step1 .right-side {
+    width: 445px;
+}
+.ie7 #subscription #step1 .right-side,
+.ie7 #subscription #step1 .left-side {
+    height: 102px;
+}
+
+#subscription #step1 .right-side label {
+    width: 135px;
+    margin-right: 20px;
+}
+
+#subscription #step1 .sbHolder{
+    float: left;
+    position: relative;
+    width: 60px;
+}
+#subscription #step1 .sbOptions,
+#subscription #step1 .sbSelector{
+    width: 60px;
+}
+
+#subscription #step1 .right-side p {
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+#subscription #step1 .right-side p .price {
+    font-weight: bold;
+    color: #4d9810;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#subscription #step2 .left-side {
+    min-height: 116px;
+    margin-bottom: 20px;
+}
+
+#subscription #step2 .right-side {
+    width: 446px;
+}
+
+#subscription #step2 .left-side ul li {
+    margin-bottom: 0px;
+}
+
+#subscription #step2 #form-adresse label,
+#subscription #step2 #form-adresse input {
+    display: block;
+}
+
+#subscription #step2 #form-adresse input {
+    margin: 2px 0 10px 0;
+    width: 170px;
+}
+
+#subscription #adress-submit {
+    padding: 8px 15px;
+    float: right;
+    margin-right: 18px !important;
+    display: inline;
+}
+
+.ie7 #subscription #adress-submit {
+    padding: 8px 5px;
+    font-size: 11px;
+    display: inline;
+}
+
+#subscription #villes,
+#subscription #modify-address,
+#subscription #cancel-address {
+    color: #4d9810;
+}
+
+#subscription #cancel-address {
+    float: left;
+    line-height: 36px;
+    display: inline;
+}
+
+#subscription #step2 #saved-adresse,
+#subscription #step2 #form-adresse {
+    margin-bottom: 20px;
+}
+
+#subscription #step2 a {
+    font-size: 13px;
+    font-style: italic;
+}
+
+#subscription #villes-abonnees {
+    display: none;
+    background: url('../img/asset/img_solo/popin-overlay.png') repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3337;
+}
+
+#subscription #villes-abonnees .popin {
+    position: fixed;
+    width: 286px;
+    height: 280px;
+    left: 50%;
+    top: 50%;
+    margin: -158px 0 0 -155px;
+    background: url('../img/asset/textures/fond-papier-clair.jpg') repeat-y 0 0;
+    -moz-border-radius: 4px;
+         border-radius: 4px;
+    padding: 30px;
+    border: 1px solid #bead9f;
+    -webkit-transform: translateZ(0);
+}
+
+#subscription #villes-abonnees .popin select {
+    width: 286px;
+    font-size: 16px;
+}
+
+#subscription #villes-abonnees .popin .popin-close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    right: 6px;
+    background: url('../img/asset/img_solo/popin-close.png') no-repeat;
+}
+
+#subscription #step3 .radio { padding-left: 8px; }
+#subscription .radio input { width: 13px; height: 13px; }
+#subscription #step3 #days-choice {
+    float: left;
+    padding-right: 4px;
+    width: 191px;
+}
+#subscription #step3 #days-choice div {
+    float: right;
+}
+#subscription #step3 #days-choice div.pronom {
+    line-height: 27px;
+}
+#subscription #step3 #day-number {
+    display: none;
+}
+#subscription #step3 #day-number .sbHolder {
+    float: left;
+    position: relative;
+    width: 65px;
+    margin-left: 5px;
+}
+.ie9 #subscription #step3 #day-number .sbHolder { margin-left: 3px; }
+#subscription #step3 #day-number .sbOptions,
+#subscription #step3 #day-number .sbSelector {
+    width: 65px;
+}
+
+#subscription #step3 #day-name .sbHolder {
+    float: left;
+    position: relative;
+    width: 98px;
+    margin-left: 5px;
+}
+#subscription #step3 #day-name .sbOptions,
+#subscription #step3 #day-name .sbSelector {
+    width: 98px;
+}
+
+#subscription #step3 #bi-mensuelle-phrase,
+#subscription #step3 #mensuelle-phrase { display: none; width: 100%; text-align: right; }
+
+
+#subscription #step3 .left-side {
+    min-height: 140px;
+    height: auto !important; /* ie */ 
+    height: 140px; /* ie */
+}
+
+#subscription #step3 .right-side p {
+    margin-bottom: 0;
+}
+
+#subscription .comment {
+    font-size: 12px; font-style: italic;
+}
+
+#subscription #step3 #creneau {
+    float: none;
+    margin-top: 15px;
+}
+
+#subscription #step3 #creneau li {
+    margin-bottom: 15px;
+}
+
+#subscription #step3 #creneau #error {
+    color: #ae2b25;
+}
+
+#subscription #step3 #creneau .sbHolder li,
+#subscription #step3 #creneau li + li + li + li { margin-bottom: 0; }
+
+#subscription #step3 #creneau li p {
+    font-size: 14px; font-style: italic;
+    line-height: 24px;
+    color: #4D9810;
+}
+
+#subscription #step3 #creneau li p img {    
+    vertical-align: bottom;
+    margin-left: 10px;
+}
+
+#subscription #step3 #creneau label {
+    width: 70px;
+    display: block;
+    float: left;
+    line-height: 23px;
+}
+
+#subscription #step3 #creneau li div + label,
+#subscription #step3 #creneau li select + label { text-align: center; }
+
+#subscription #step3 #creneau .sbHolder {
+    float: left;
+    position: relative;
+    width: 82px;
+    margin-left: 5px;
+}
+#subscription #step3 #creneau .sbOptions,
+#subscription #step3 #creneau .sbSelector {
+    width: 82px;
+}
+
+#subscription #step3 .step3-tel {
+    margin-top: 20px;
+}
+
+#subscription #step4 ul {
+    width: 565px;
+    margin-left: 15px;
+}
+
+#subscription #step4 input {
+    float: left;
+}
+
+#subscription #step4 label {
+    float: left;
+    max-width: 535px;
+    width: 535px;
+}
+
+#subscription #abonnement-submit {
+    width: 200px;
+    display: block;
+    margin: 35px auto;
+    padding: 10px 20px 10px 20px;
+}

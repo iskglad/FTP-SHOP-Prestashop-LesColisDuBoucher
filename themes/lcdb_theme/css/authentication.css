@@ -1,0 +1,210 @@
+
+#authentication .bloc{
+	border: 1px solid #bead9f;
+	-webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+			border-radius: 8px;
+	padding: 20px;
+	background-color: rgba(255,255,255,.4);
+	min-height: 260px;
+	height: auto !important; /* ie */ 
+  	height: 260px; /* ie */ 
+}
+
+/* ************************************************************************************************
+		STYLE DU CHECKOUT - 1) IDENTIFICATION
+************************************************************************************************ */
+#authentication .bloc-checkout h2{
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: bold;
+	border-bottom: 1px dashed #342110;
+	padding-bottom: 10px;
+	margin-bottom: 70px;
+}
+#authentication .bloc.content-register{
+	width: 424px;
+	border: 1px solid #bead9f;
+	background-color: rgba(255,255,255,0.4);
+	-webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+	        border-radius: 8px;
+	padding: 10px;
+	float: left;
+	margin-right: 26px;
+	min-height: 363px;
+	height: auto !important; /* ie */ 
+  	height: 363px; /* ie */ 
+  	position: relative;
+  	font-size: 14px;
+}
+#authentication .bloc.content-register h2{
+	background: url('../img/asset/img_solo/checkout-first-command.png') no-repeat 0 0;
+	padding-left: 40px;
+	margin-bottom: 70px;
+}
+#authentication .bloc.content-login{
+	width: 424px;
+	border: 1px solid #bead9f;
+	background-color: rgba(255,255,255,0.4);
+	-webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+	        border-radius: 8px;
+	padding: 10px;
+	float: left;
+	min-height: 363px;
+	height: auto !important; /* ie */ 
+  	height: 363px; /* ie */ 
+  	position: relative;
+  	font-size: 14px;
+}
+#authentication .content-login h2{
+	background: url('../img/asset/img_solo/checkout-login.png') no-repeat 0 0;
+	padding-left: 24px;
+}
+#authentication .content-register .red-button{
+	padding-left: 30px;
+	padding-right: 30px;
+	display: block;
+}
+#authentication .content-register .register-button,
+#authentication .content-login .login-button{
+	position: absolute;
+	bottom: 18px;
+	right: 18px;
+}
+#authentication .content-login form { padding-left: 10px; }
+#authentication .content-login form label,
+#authentication .content-login form input { display: block; }
+
+#authentication .content-login form #mail-address { margin-bottom: 20px; }
+
+#authentication .content-login form #mail-address,
+#authentication .content-login form #password { width: 290px; }
+
+#authentication .content-login form .checkbox input { display: inline-block; }
+
+#authentication .content-login a.green-title {
+	display: block; 
+	margin: 9px 0 20px;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+#authentication .content-login a.green-title:hover {
+	text-decoration: underline;
+}
+
+#authentication .bloc.content-register-form {
+	width: 880px;
+}
+
+#authentication .content-register-form h1 {
+	font-size: 16px;
+	padding: 0 0 10px 40px;
+	line-height: 30px;
+	border-bottom: 1px dashed #342110;
+	background: url('../img/asset/img_solo/checkout-first-command.png') no-repeat 0 0;
+}
+
+#authentication .content-register-form .required { color: #bd544f; }
+
+#authentication .content-register-form form {
+	padding-left: 86px;
+}
+
+#authentication .content-register-form .left-side,
+#authentication .content-register-form .right-side {
+	width: 300px;
+	float: left;
+	zoom: 1;
+}
+
+#authentication .content-register-form .right-side { width: 390px; padding-top: 52px; }
+
+#authentication .content-register-form .left-side { margin-right: 70px; }
+
+#authentication .content-register-form form label,
+#authentication .content-register-form form input {
+	display: block;
+}
+
+#authentication .content-register-form form label,
+#authentication .content-register-form form p { margin-bottom: 3px; font-size: 14px; }
+#authentication .content-register-form form input { margin-bottom: 15px; width: 294px; }
+#authentication .content-register-form form select { margin-bottom: 15px; }
+
+#authentication .content-register-form form label.radio,
+#authentication .content-register-form form .radio input,
+#authentication .content-register-form form label.checkbox,
+#authentication .content-register-form form .checkbox input,
+#authentication .content-register-form .register-button input {
+	display: inline-block;
+	width: auto;
+}
+#authentication .content-register-form form label.radio,
+#authentication .content-register-form form label.checkbox{
+	margin-right: 20px;
+}
+
+#authentication .content-register-form form p.annotation {
+	font-size: 12px; font-style: italic;
+}
+
+#authentication .content-register-form .register-button {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#authentication .content-register-form .register-button input {
+	width: 170px;
+}
+
+#authentication .content-register-form p.required-fields {
+	font-size: 12px;
+}
+
+#authentication .content-register-form p.cnil {
+	font-size: 12px; font-style: italic;
+}
+
+#authentication .content-register-form a {
+	color: #4d9810;
+}
+
+#authentication .content-register-form a:hover { text-decoration: underline; }
+
+#authentication .content-register-form .sbHolder {
+    position: relative;
+    width: 300px;
+}
+#authentication .content-register-form .sbHolder a { text-decoration: none; color: #342110; }
+#authentication .content-register-form .sbOptions { width: 270px; }
+#authentication .content-register-form .sbSelector { width: 300px; }
+#authentication .birthdate .sbSelector {width: inherit;}
+
+#authentication .content-register-form #from-ce { margin-bottom: 18px; display: none; }
+
+#authentication .content-register-form #ce-more,
+#authentication .content-register-form #ce-less { margin-bottom: 5px; }
+
+#authentication .content-register-form #come-from-ce { margin-bottom: 9px; }
+
+#authentication .birthdate { float: left; margin: 0 7px 15px 0; }
+
+#authentication .content-register-form #days .sbOptions,
+#authentication .content-register-form #days .sbHolder {
+	width: 80px;
+}
+
+#authentication .content-register-form #months .sbOptions,
+#authentication .content-register-form #months .sbHolder {
+	width: 120px;
+}
+
+#authentication .content-register-form #years .sbOptions,
+#authentication .content-register-form #years .sbHolder {
+	width: 80px;
+}
+
+#authentication .content-register-form #years { margin-right: 0; }

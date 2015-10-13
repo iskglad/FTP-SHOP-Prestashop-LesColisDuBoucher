@@ -1,0 +1,20 @@
+.colis{
+    border: black solid 1px;
+    width: 100%;
+    min-height: 260px;
+    overflow: hidden;
+}
+.paiement{
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+ul{
+    list-style: none;
+    width: 350px;
+}
+li{
+    margin: 10px;
+}
+.date{
+    float:right;
+}

@@ -1,0 +1,274 @@
+.action-product p, .action-product h3, .action-product h2{
+    padding: 0;
+    margin:0;
+}
+.list-product .action-product{
+    padding-left: 9px;
+}
+.action-product form:after{
+    content:"";
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.ie7 .action-product form{
+    overflow: auto;
+    width:385px;
+}
+.list-product .action-product form *{
+    line-height: 1.0em;
+    height: 1.0em;
+}
+
+.action-product a.product-link.more-details:hover{
+    text-decoration:underline;
+}
+.page-list-product-fish .action-product .action-product a{
+    color: #358eda;
+}
+/*GREEN ADD BUTTON*/
+.action-product .form-panier .green-button{
+    padding: 0px;
+    margin-left: 2px;
+    font-size: 10px;
+    font-family: 'MyriadWebPro', Arial, sans-serif;
+    vertical-align: bottom;
+    width: 70px;
+    height: 16px;
+}
+.product-default .action-product .form-panier .green-button{
+    font-size: 0.9em;
+    position: relative;
+    height: 1.4em;
+    bottom: 2px;
+    vertical-align: baseline;
+}
+.ie7 .action-product .form-panier .green-button{
+    border: 1px solid #5eb11a;
+    padding: 5px 0px 6px 0px;
+    width: 112px;
+    margin-left: 0px;
+    background: #5eb11a;
+}
+.action-product .form-panier .green-button:hover{
+    border: 1px solid #71c41e;
+    background: #1d600a;
+    background: -moz-linear-gradient(top,  #5bab19 0%, #1d600a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5bab19), color-stop(100%,#1d600a));
+    background: -webkit-linear-gradient(top,  #5bab19 0%,#1d600a 100%);
+    background: -o-linear-gradient(top,  #5bab19 0%,#1d600a 100%);
+    background: -ms-linear-gradient(top,  #5bab19 0%,#1d600a 100%);
+    background: linear-gradient(to bottom,  #5bab19 0%,#1d600a 100%);
+    cursor: pointer;
+}
+#center_column .action-product .form-panier label{
+    float: left;
+    padding-top: 12px;
+}
+.action-product .sbHolder{
+    float: left;
+    margin: 0px 5px 0px 5px;
+}
+.action-product .sbOptions,
+.action-product .sbHolder,
+.action-product .sbSelector{
+    width: 155px;
+}
+.action-product .sbHolder,
+.action-product .sbSelector{
+    height: 24px;
+}
+.action-product .sbSelector{
+    line-height: 27px;
+}
+.action-product .sbHolder a{
+    float: none;
+    color: #342110;
+    text-decoration: none;
+    text-align:left;
+}
+.action-product .sbToggle{
+    width: 25px;
+    background-position: 8px 10px;
+    height: 24px;
+}
+#center_column .action-product .form-panier select{
+    margin-right: 10px;
+    width: 150px;
+}
+ .action-product .form-panier  .moreless{
+    font-size: 12px;
+    width: 15px;
+    /*vertical-align: bottom;*/
+    height: 15px;
+    /* margin-top: 0px; */
+}
+ .product-default .action-product .form-panier .moreless{
+    height: 1.5em;
+ }
+ .action-product .form-panier input{
+    padding:0;
+    font-size: 1em;
+    vertical-align: bottom;
+}
+ .product-default .action-product .form-panier input{
+     font-size: 1.3em;
+     vertical-align: baseline;
+     position: relative;
+     top:3px;
+ }
+.ie7  .action-product .form-panier input{
+    width: 30px;
+}
+
+
+ .action-product form:last-child{
+    margin-bottom: 15px;
+}
+ .action-product > a{
+    float:left;
+    padding-top: 13px;
+}
+ .action-product form{
+    /*float:right;
+    width:375px;*/
+    text-align:right;
+    margin-bottom: 8px;
+}
+ .action-product:after{
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+ .action-product{
+    /*height:120px;
+    width: 250px;
+    display: inline-block;
+    float:right;*/
+}
+.ie7  .action-product{
+    overflow: auto;
+}
+/*LABEL*/
+.declinaison .label{
+    text-align: left;
+    display: inline-block;
+    float:left;
+    font-size: 1.3em;
+}
+.list-product .declinaison .label{
+    font-size: 1.0em;
+}
+.list-product .declinaison .label{
+    margin-left:40px;
+}
+.action-product .logo-label{
+    height: 1.3em;
+    position: relative;
+    top: 6px;
+}
+.list-product .action-product .logo-label{
+    height: 18px;
+    position: relative;
+    top: 2px;
+}
+
+/*PRICE*/
+.declinaison .price-kg{
+    font-size: 10px;
+    margin-right: 0em;
+    min-width: 50px;
+    text-align: left;
+    display: inline-block;
+}
+.declinaison .selling_price{
+    font-size: 1.1em;
+    min-width: 50px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-weight: bolder;
+    display: inline-block;
+}
+.action-product .price .selling_price p, .selling_price{
+    color: #4E9912;
+}
+.action-product .price p.price-kg{
+    font-size: 14px;
+    color:#342110;
+}
+.action-product .reduction .selling_price{
+    /*	float: left;*/
+    padding-top: 4px;
+}
+.product-default .action-product .selling_price{
+    font-size: 1.3em;
+}
+.action-product .reduction .full_price p span{
+    color: #ab9583;
+}
+.action-product .reduction p.price-piece{
+    font-size: 21px;
+}
+.action-product .price-kg{
+    font-size: 11px;
+}
+.product-default .action-product .price-kg{
+    font-size: 0.9em;
+}
+
+/*PROMO*/
+
+.action-product .promo{
+    color: white;
+    border: darkred 2px solid;
+    background: #b2362b;
+
+    display:inline-block;
+    /*padding-top:1em;
+    padding-bottom:1em;*/
+    padding-right: 0.7em;
+    padding-left: 0.7em;
+    font-style: italic;
+    margin-right: 20px;
+}
+.product-default .action-product .promo{
+    font-size: 1.1em;
+    margin-right: 4px;
+}
+
+/*ALIGNEMENT*/
+.action-product .label,
+.action-product .price-kg,
+.action-product .selling_price,
+.action-product .promo{
+    position: relative;
+    top:2px;
+}
+.product-default .action-product .label,
+.product-default .action-product .price-kg,
+.product-default .action-product .selling_price,
+.product-default .action-product .promo{
+    position: relative;
+    top:4px;
+}
+
+/*WARNING*/
+.action-product .warning{
+    background:none;
+    border:none;
+    color: #d44137;
+    font-size: 13px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    margin-left: 5em;
+    text-align: left;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display:inline-block;
+    float:left;
+}
+.product-default .action-product .warning{
+    margin-left: 3em;
+}

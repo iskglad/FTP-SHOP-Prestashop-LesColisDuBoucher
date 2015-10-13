@@ -1,0 +1,80 @@
+
+#addresses #center_column {
+width: 712px;
+margin: 0 24px 0 12px;
+}
+
+#addresses .address p.information{
+	border-bottom: 1px solid #342110;
+	padding-bottom: 5px;
+}
+#addresses .address .big-bloc > p.information{
+	margin-bottom: 40px;
+}
+
+#addresses .address h1{
+	margin-bottom: 0px;
+}
+#addresses .address .big-bloc > p{
+	margin-top: 4px;
+	margin-bottom: 15px;
+}
+#addresses .address p.information{
+	border-bottom: 1px solid #342110;
+	padding-bottom: 5px;
+}
+#addresses .address .big-bloc > p.information{
+	margin-bottom: 40px;
+}
+/* PAGE mes adresses - Liste */
+#addresses #center_column.address .big-bloc{
+	padding: 20px;
+}
+#addresses .address #address-list{
+	border-top: 1px solid #342110;
+}
+#addresses .address .details-address{
+	width: 238px;
+	float: left;
+	padding-right:93px;
+	margin: 25px 0px 10px 0px;
+}
+#addresses .address .details-address > p{
+	margin-bottom: 0px;
+}
+#addresses .address #address-list:after{
+	display: block;
+	content: "";
+	visibility: hidden;
+	clear: both;
+}
+.ie7 #addresses .address #address-list{
+	overflow: auto;
+}
+#addresses .address .details-address p.information{
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+#addresses .address .action-link a{
+	color: #4D9810;
+	display: block;
+	font-style: italic;
+}
+#addresses .address .action-link {
+	border-top: 1px solid #342110;
+	padding-top:8px;
+	margin-top:8px;
+}
+#addresses .address .action-link a span{
+	margin-right: 10px;
+}
+#addresses .address .action{
+	margin-top: 15px;
+	clear: both;
+}
+#addresses .address .action a{
+	width: 155px;
+	display: block;
+	margin:auto;
+	text-align: center;
+}

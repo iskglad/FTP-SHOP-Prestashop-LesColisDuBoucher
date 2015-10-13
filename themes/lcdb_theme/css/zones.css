@@ -1,0 +1,80 @@
+table td, table th{
+    font-size: 1.25em;
+}
+#calendar_admin table {
+	position: relative;
+}
+
+#calendar_admin .nav {
+	width: 225px;
+}
+
+#calendar_admin .nav .next{
+	float: right;
+}
+
+#calendar_admin td {
+	text-align: center;
+	cursor: pointer;
+}
+
+#calendar_admin td .desc {
+	position: absolute;
+	display: none;
+	left: 200px;
+	top: 60px;
+	width: 250px;
+	cursor: initial;
+	font-weight: normal;
+}
+
+#calendar_admin td .desc .check {
+	display: inline;
+}
+#calendar_admin td .desc > *{
+    margin-left: 4em;
+}
+#calendar_admin td .desc input {
+	display: block;
+	margin: 0 auto;
+	width: 10px;
+}
+#calendar_admin td .desc label input {
+    display: inline;
+}
+#calendar_admin td .desc label {
+    display: block;
+    float:none;
+    text-align: left;
+}
+#calendar_admin td .desc .okk {
+	cursor: pointer;
+    display: block;
+    background: dimgray;
+    color: white;
+    height: 2em;
+    width: 4em;
+    line-height: 2em;
+    margin-top: 1em;
+}
+#calendar_admin td .desc .okk:hover{
+    background:limegreen;
+}
+
+#calendar_admin .open {
+	background: green;
+    color:white;
+}
+#calendar_admin .close {
+    background: darkred;
+    color:white;
+}
+#calendar_admin .open strong {
+    color:dimgray;
+}
+#calendar_admin strong {
+    color:dimgray;
+}
+#calendar_admin .today {
+	font-weight: bold;
+}

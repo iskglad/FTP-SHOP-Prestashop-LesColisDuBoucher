@@ -1,0 +1,32 @@
+
+/* ************************************************************************************************
+        Page mes informations
+************************************************************************************************ */
+
+#identity #center_column {
+width: 712px;
+margin: 0 24px 0 12px;
+}
+
+
+/*asterisque en rouge*/
+.asterisque_rouge{color:#ae2b25;}
+
+/*labels du formulaire*/
+.labels_infos{margin-top:20px; margin-bottom:5px;}
+
+/*espace entre les radios boutons*/
+.label_radio {margin-left:20px;}
+
+/*input text*/
+.mes_informations input[type=text], .mes_informations input[type=password]{width:295px;}
+
+/*label en italique*/
+.label_italique{font-size:80%;font-style:italic;}
+
+/*bouton submit*/
+#informations_submit {margin-left:230px; margin-top:15px;}
+
+#security_informations {
+	margin-top: 50px;
+}
