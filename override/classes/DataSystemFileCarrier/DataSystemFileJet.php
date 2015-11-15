@@ -70,7 +70,7 @@ class DataSystemFileJet extends AdminController{
             //payment
             $payment = "";
             if (!$order['is_payment_done'])
-                $payment = 'Paiement a effectuer : '.$order['total_products_wt'].' euros';
+                $payment = 'Paiement a effectuer : '.$order['total_paid_wt'].' euros';
 
             //heure
             if (count($order['hours_array']) == 0){

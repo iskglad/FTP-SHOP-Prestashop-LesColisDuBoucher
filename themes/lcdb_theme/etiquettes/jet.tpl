@@ -15,7 +15,7 @@
             </li>
             {if !$order.is_payment_done}
                 <li class="paiement">
-                    Paiement à effectuer : {$order.total_products_wt} euros
+                    Paiement à effectuer : {$order.total_paid_wt} euros
                 </li>
             {/if}
 

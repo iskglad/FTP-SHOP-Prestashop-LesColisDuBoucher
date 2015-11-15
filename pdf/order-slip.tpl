@@ -145,7 +145,6 @@
 					<td style="width: 15%; text-align: right;">- {displayPrice currency=$order->id_currency price=$order_slip->shipping_cost_amount}</td>
 				</tr>
 				{/if}
-
 				{if (($order->total_paid_tax_incl - $order->total_paid_tax_excl) > 0)}
 				<tr style="line-height:5px;">
 					<td style="width: 85%; text-align: right; font-weight: bold">{l s='Product Total (Tax Excl.)' pdf='true'}</td>

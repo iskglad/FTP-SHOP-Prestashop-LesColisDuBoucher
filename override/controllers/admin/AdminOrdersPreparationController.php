@@ -92,6 +92,8 @@ class AdminOrdersPreparationController extends AdminController{
             a.date_delivery         as  delivery_date,
             a.hour_delivery         as  hours,
             a.total_products_wt     as  total_products_wt,
+            a.total_discounts_tax_incl  as total_discounts_wt,
+            a.total_paid_tax_incl   as  total_paid_wt,
             a.message               as  message,
 
             da.firstname            as  delivery_first_name,
@@ -544,7 +546,7 @@ class AdminOrdersPreparationController extends AdminController{
                 $order["client_note"],
                 $order['payment'],
                 ($order["is_payment_done"]) ? "Payement effectué" : "",
-                $order["total_products_wt"],
+                $order["total_paid_wt"],
                 ($order["is_new_customer"]) ? "Oui" : "",
                 $order["client_name"], //commandeur
                 $order["client_email"],//commandeur

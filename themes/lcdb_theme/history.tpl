@@ -1,6 +1,3 @@
-
-
-
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Orders'}{/capture}
 
 <div id="columns" class="content clearfix">

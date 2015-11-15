@@ -1294,17 +1294,37 @@ class Cart extends CartCore
 		return $this->_products;
 	}
 
-    //get and set total product price with tax
-    public function getTotalProductsPriceWithTax(){
-
+    //get total product price with tax
+    public function getTotalProductsPriceWithTax($count_gift_product = false){
         $total_with_tax = 0;
         $products = $this->getProducts();
+
+        //Sum all product prices (normal and gift)
         foreach ($products as $product){
             $total_with_tax += $product['total_wt'];
+        }
 
+        //Retrieve gift products prices
+        if ($count_gift_product == false){
+            $cart_rules = $this->getCartRules();
+            foreach ($cart_rules as $cart_rule) {
+                if ($cart_rule['gift_product']) {
+                    foreach ($products as $product)
+                        if (empty($product['gift']) && $product['id_product'] == $cart_rule['gift_product'] && $product['id_product_attribute'] == $cart_rule['gift_product_attribute']){
+                            $total_with_tax -= $product['total_wt'];
+                        }
+                }
+            }
         }
         return $total_with_tax;
     }
+
+    //get total product price with tax and discounts
+    public function getOrderTotalPriceWithTaxAndDiscount(){
+        $orderTotalwithDiscounts = $this->getOrderTotal(true, Cart::BOTH_WITHOUT_SHIPPING, null, null, false);
+        return $orderTotalwithDiscounts;
+    }
+
 
     //get order to adjust
     public function getOrderToAdjust(){

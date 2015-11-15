@@ -198,30 +198,32 @@
 				<!-- CART RULES -->
 				{assign var="shipping_discount_tax_incl" value="0"}
 				{foreach $cart_rules as $cart_rule}
-				{cycle values='#FFF,#DDD' assign=bgcolor}
-					<tr style="line-height:6px;background-color:{$bgcolor};" text-align="left">
-						<td colspan="{if !$tax_excluded_display}5{else}4{/if}">{$cart_rule.name}</td>
-						<td>
-							{if $cart_rule.free_shipping}
-								{assign var="shipping_discount_tax_incl" value=$order_invoice->total_shipping_tax_incl}
-							{/if}
-							{if $tax_excluded_display}
-								- {$cart_rule.value_tax_excl}
-							{else}
-								- {$cart_rule.value}
-							{/if}
-						</td>
-					</tr>
+                    {if $cart_rule.free_shipping}
+                        {assign var="shipping_discount_tax_incl" value=$order_invoice->total_shipping_tax_incl}
+                    {else}
+				        {cycle values='#FFF,#DDD' assign=bgcolor}
+					    <tr style="line-height:6px;background-color:{$bgcolor};" text-align="left">
+						    <td colspan="{if !$tax_excluded_display}5{else}4{/if}">{$cart_rule.name}</td>
+						    <td>
+                                {if $tax_excluded_display}
+								    - {$cart_rule.value_tax_excl}
+							    {else}
+								    - {$cart_rule.value}
+							    {/if}
+								&euro;
+						    </td>
+					    </tr>
+                    {/if}
 				{/foreach}
 				<!-- END CART RULES -->
 			</table>
 
 			<table style="width: 100%">
 				{if (($order_invoice->total_paid_tax_incl - $order_invoice->total_paid_tax_excl) > 0)}
-				<tr style="line-height:5px;">
+				{*<tr style="line-height:5px;">
 					<td style="width: 85%; text-align: right; font-weight: bold">{l s='Product Total (Tax Excl.)' pdf='true'}</td>
 					<td style="width: 15%; text-align: right;">{displayPrice currency=$order->id_currency price=$order_invoice->total_products}</td>
-				</tr>
+				</tr>*}
 
 				<tr style="line-height:5px;">
 					<td style="width: 85%; text-align: right; font-weight: bold">{l s='Product Total (Tax Incl.)' pdf='true'}</td>
@@ -233,11 +235,11 @@
 					<td style="width: 15%; text-align: right;">{displayPrice currency=$order->id_currency price=$order_invoice->total_products}</td>
 				</tr>
 				{/if}
-
+                <!--Total discount-->
 				{if $order_invoice->total_discount_tax_incl > 0}
 				<tr style="line-height:5px;">
 					<td style="text-align: right; font-weight: bold">{l s='Total Vouchers' pdf='true'}</td>
-					<td style="width: 15%; text-align: right;">-{displayPrice currency=$order->id_currency price=($order_invoice->total_discount_tax_incl + $shipping_discount_tax_incl)}</td>
+					<td style="width: 15%; text-align: right;">-{displayPrice currency=$order->id_currency price=($order_invoice->total_discount_tax_incl)}</td>
 				</tr>
 				{/if}
 
@@ -254,25 +256,33 @@
 				</tr>
 				{/if}
 
-				{if $order_invoice->total_shipping_tax_incl > 0}
-				<tr style="line-height:5px;">
-					<td style="text-align: right; font-weight: bold">{l s='Shipping Cost' pdf='true'}</td>
-					<td style="width: 15%; text-align: right;">
-						{if $tax_excluded_display}
-							{displayPrice currency=$order->id_currency price=$order_invoice->total_shipping_tax_excl}
-							{else}
-							{displayPrice currency=$order->id_currency price=$order_invoice->total_shipping_tax_incl}
-						{/if}
-					</td>
-				</tr>
+                <!--Shipping-->
+				{if $order_invoice->total_shipping_tax_incl > 0 && !$order->free_shipping_discount}
+				    <tr style="line-height:5px;">
+					    <td style="text-align: right; font-weight: bold">{l s='Shipping Cost' pdf='true'}</td>
+					    <td style="width: 15%; text-align: right;">
+						    {if $tax_excluded_display}
+							    {displayPrice currency=$order->id_currency price=$order_invoice->total_shipping_tax_excl}
+                            {else}
+							    {displayPrice currency=$order->id_currency price=$order_invoice->total_shipping_tax_incl}
+						    {/if}
+					    </td>
+				    </tr>
+                {else}
+                    <tr style="line-height:5px;">
+                        <td style="text-align: right; font-weight: bold">{l s='Shipping Cost' pdf='true'}</td>
+                        <td style="width: 15%; text-align: right;">
+                            Offerts
+                        </td>
+                    </tr>
 				{/if}
 
-				{if ($order_invoice->total_paid_tax_incl - $order_invoice->total_paid_tax_excl) > 0}
+				{*{if ($order_invoice->total_paid_tax_incl - $order_invoice->total_paid_tax_excl) > 0}
 				<tr style="line-height:5px;">
 					<td style="text-align: right; font-weight: bold">{l s='Total Tax' pdf='true'}</td>
 					<td style="width: 15%; text-align: right;">{displayPrice currency=$order->id_currency price=($order_invoice->total_paid_tax_incl - $order_invoice->total_paid_tax_excl)}</td>
 				</tr>
-				{/if}
+				{/if}*}
 
 				<tr style="line-height:5px;">
 					<td style="text-align: right; font-weight: bold">{l s='Total' pdf='true'}</td>

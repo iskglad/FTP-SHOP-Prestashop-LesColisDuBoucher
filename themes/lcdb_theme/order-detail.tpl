@@ -139,11 +139,29 @@
                 </tr>
             {/if}
         {/foreach}
+
+        <!-- CART RULES -->
+        {assign var='total_discounts' value=0}
+        {foreach $discounts as $cart_rule}
+            {if !$cart_rule.free_shipping}
+                {$total_discounts = $total_discounts + $cart_rule.value}
+                <tr text-align="left">
+                    <td colspan="3">{$cart_rule.name}</td>
+                    <td>- {$cart_rule.value}&euro;</td>
+                </tr>
+            {/if}
+        {/foreach}
+        <!-- END CART RULES -->
         </tbody>
     </table>
 
     <div id="total">
         <p class="clearfix"><span class="title bold">Total panier TTC :</span><span class="value bold green">{displayWtPriceWithCurrency price=$order->getTotalProductsWithTaxes() currency=$currency}</span></p>
+
+        {if $total_discounts}
+            <p class="clearfix"><span class="title">Total réduction :</span><span class="value green">-{displayWtPriceWithCurrency price=$total_discounts currency=$currency}</span></p>
+        {/if}
+
         {if $order->free_shipping_discount}
             <p class="clearfix"><span class="title">Frais de livraison :</span><span class="value green">Offerts!</span></p>
         {else}

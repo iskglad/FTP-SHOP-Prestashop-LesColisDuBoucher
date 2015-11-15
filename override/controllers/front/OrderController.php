@@ -358,10 +358,15 @@ class OrderController extends OrderControllerCore
                 $this->context->smarty->assign('minimum_order_zone_proche', $minimum_order_zone_proche);
                 $this->context->smarty->assign('minimum_order_current_zone', $minimum_order_current_zone);
 
-                //get and set total product price with tax
+                //get and set total product prices
                 $current_cart = $this->context->smarty->getTemplateVars('cart');
                 $total_with_tax = $current_cart->getTotalProductsPriceWithTax();
+                $total_with_tax_with_gift = $current_cart->getTotalProductsPriceWithTax(true); //true = count gift
+                $total_with_tax_and_discounts = $current_cart->getOrderTotalPriceWithTaxAndDiscount();
                 $this->context->smarty->assign('total_products_price_with_tax', $total_with_tax);
+                $this->context->smarty->assign('total_products_price_with_tax_with_gift', $total_with_tax_with_gift);
+                $this->context->smarty->assign('total_order_price_with_tax_and_discounts', $total_with_tax_and_discounts);
+
 
                 //add js files
                 $this->addJS(_THEME_JS_DIR_.'order_minimum_error.js');

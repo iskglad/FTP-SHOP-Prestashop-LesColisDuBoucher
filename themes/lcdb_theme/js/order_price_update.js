@@ -8,10 +8,10 @@ $(function(){
         var shipping_price = $(this).find('.shipping_price').attr('data-shipping-price');
         if (!shipping_price)
             shipping_price = 0;
-        var total = parseFloat(total_price) + parseFloat(shipping_price);
+        var total = parseFloat(total_order_price_with_discount) + parseFloat(shipping_price);
         //round decimal 2
         total = Math.round(total * 100) / 100;
-        console.log("Oder total price-->" + total_price + ' + ' + shipping_price + ' = ' + total);
+        console.log("Oder total price-->" + total_order_price_with_discount + ' + ' + shipping_price + ' = ' + total);
         $('#final-price').html(total.toString());
         $('#final-price').attr('data-price', total);
     });

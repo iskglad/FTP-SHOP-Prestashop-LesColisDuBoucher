@@ -26,6 +26,49 @@ class ParentOrderController extends ParentOrderControllerCore
 		}
 	}
 
+	//Get order summary product combinaison informations
+	protected function updateSummaryProductInformation($product){
+		//Get product object
+		$currProd = new Product($product['id_product'], true, $this->context->language->id, $this->context->shop->id);
+		$currProdFeatures = $currProd->getFrontFeatures($this->context->language->id);
+		foreach ($currProdFeatures as $key => $features) {
+			if ($features['id_feature'] == 3) { // if feature = label (3 = id feature label)
+				$product['label'] = $features['value'];
+			}
+		}
+
+		//get current combination infos
+		$found = false;
+		foreach($currProd->combinations as $comb){
+			//find current combination
+			if ($comb['id_product_attribute'] == $product['id_product_attribute']){
+				$found = true;
+				//Setting isPromo
+				$product['isPro'] = $comb['isPro'];
+				//Setting isPro
+				$product['isPromo'] = $comb['isPromo'];
+				//Setting label
+				$product['label_name'] = $comb['label_name'];
+				//Setting colis name (used for colis)
+				$product['colis_name'] = $comb['colis_name'];
+				//Setting available quantity
+				$product['available_quantity'] = StockAvailable::getQuantityAvailableByProduct((int)$product['id_product'], $comb['id_product_attribute']);
+				if ($product['available_quantity'] < 0)
+					$product['available_quantity'] = 10000;//valeur arbritraire pour le front end. quantity < 0 => infinite
+			}
+		}
+		//set default display value, so that the customer will now that the product is not from his cart version
+		if ($found == false){
+			$product['isPro'] = false;
+			$product['isPromo'] = false;
+			$product['label_name'] = "selection";
+			$product['colis_name'] = "";
+			$product['available_quantity'] = 10000;
+			$product['description_short'] = "Attention ce produit ne fait partie de votre version de carte. Veuillez nous contactez.";
+		}
+		return $product;
+	}
+
 	protected function _assignSummaryInformations()
 	{
         $summary = $this->context->cart->getSummaryDetails();
@@ -49,48 +92,7 @@ class ParentOrderController extends ParentOrderControllerCore
 		$cart_product_context = Context::getContext()->cloneContext();
 		foreach ($summary['products'] as $key => &$product)
 		{
-           //	customcode
-			$currProd = new Product($product['id_product'], true, $this->context->language->id, $this->context->shop->id);
-            $currProdFeatures = $currProd->getFrontFeatures($this->context->language->id);
-			foreach ($currProdFeatures as $key => $features) {
-				if ($features['id_feature'] == 3) { // if feature = label (3 = id feature label)
-					$product['label'] = $features['value'];
-				}
-			}
-
-            //Tools::testVar($product['id_product_attribute']);
-            //get current combination infos
-            $found = false;
-            foreach($currProd->combinations as $comb){
-                //find current combination
-                if ($comb['id_product_attribute'] == $product['id_product_attribute']){
-                    $found = true;
-                    //Setting isPromo
-                    $product['isPro'] = $comb['isPro'];
-                    //Setting isPro
-                    $product['isPromo'] = $comb['isPromo'];
-                    //Setting label
-                    $product['label_name'] = $comb['label_name'];
-                    //Setting colis name (used for colis)
-                    $product['colis_name'] = $comb['colis_name'];
-                    //Setting available quantity
-                    $product['available_quantity'] = StockAvailable::getQuantityAvailableByProduct((int)$product['id_product'], $comb['id_product_attribute']);
-                    if ($product['available_quantity'] < 0)
-                        $product['available_quantity'] = 10000;//valeur arbritraire pour le front end. quantity < 0 => infinite
-                }
-            }
-            //set default display value, so that the customer will now that the product is not from his cart version
-            if ($found == false){
-                $product['isPro'] = false;
-                $product['isPromo'] = false;
-                $product['label_name'] = "selection";
-                $product['colis_name'] = "";
-                $product['available_quantity'] = 10000;
-                $product['description_short'] = "Attention ce produit ne fait partie de votre version de carte. Veuillez nous contactez.";
-            }
-
-
-			//	/customcode
+           $product = $this->updateSummaryProductInformation($product); //set combinaison infos
 
 			$product['quantity'] = $product['cart_quantity'];// for compatibility with 1.2 themes
 
@@ -120,6 +122,12 @@ class ParentOrderController extends ParentOrderControllerCore
 				$product['is_discounted'] = $product['price_without_specific_price'] != $product['price_wt'];
            //Product::testVar($currProd);
 
+		}
+
+		//Get gift products combinaisons infos
+		foreach ($summary['gift_products'] as $key => &$gift_product)
+		{
+			$gift_product = $this->updateSummaryProductInformation($gift_product); //set combinaison infos
 		}
 
         // Get available cart rules and unset the cart rules already in the cart
@@ -162,7 +170,6 @@ class ParentOrderController extends ParentOrderControllerCore
 			'currencyFormat' => $this->context->currency->format,
 			'currencyBlank' => $this->context->currency->blank,
 			'show_option_allow_separate_package' => $show_option_allow_separate_package,
-				
 		));
 
         $this->context->smarty->assign(array(

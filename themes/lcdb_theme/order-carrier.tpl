@@ -45,6 +45,7 @@
 
     //price used in order_minimum_error.js
     var total_price = {$total_products_price_with_tax};
+    var total_order_price_with_discount = {$total_order_price_with_tax_and_discounts};
     var minimum_order_zone_proche = {$minimum_order_zone_proche};
     var minimum_order_current_zone = {$minimum_order_current_zone};
 
@@ -399,25 +400,20 @@
             <textarea name="gift_message" placeholder="Saisissez le message qui sera joint au cadeau" id="gift_message" class="hidden">{$cart->gift_message|escape:'htmlall':'UTF-8'}</textarea>
         </div>
         <hr class="dashed" />
-       <!-- <p id="total-price">Le montant TTC de votre commande est de <span class="price"><span data-price="{convertPrice price=$cart->getOrderTotal(true, $order_total_flag)}" id="final-price">{convertPrice price=$cart->getOrderTotal(true, $order_total_flag)}</span> &euro;</span></p>-->
-        <p id="total-price">Le montant TTC de votre commande est de <span class="price"><span data-price="{convertPrice price=$total_products_price_with_tax}" id="final-price">{convertPrice price=$total_products_price_with_tax}</span> &euro;</span></p>
+        <p id="total-price">Le montant TTC de votre commande est de <span class="price"><span data-price="{convertPrice price=$total_order_price_with_tax_and_discounts}" id="final-price">{convertPrice price=$total_order_price_with_tax_and_discounts}</span> &euro;</span></p>
         <div id="error-price" style="display:none">
             <p>
                <span class="bold">
                     Minimum de commande non atteint.
                 </span><br>
                 Nous vous invitons &agrave; continuer vos achats.<br />
-                <!--Pour une livraison dans le <span id="error-postal">{$cp}</span>,-->
-                Le montant de votre commande doit &ecirc;tre au minimum de <span id="error-minimum-price">{$minimum_order}</span> &euro; pour ce mode de livraison.<br>
+                Le montant total de vos produits doit &ecirc;tre au minimum de <span id="error-minimum-price">{$minimum_order}</span> &euro; pour ce mode de livraison.<br>
                 Il est actuellement de
                 <span class="bold">
-                    {$cart->getOrderTotal(true, $order_total_flag_without)+$cart->getOrderTotal(true, 2)}
+                    {$total_products_price_with_tax}
                 </span> &euro;.
             </p>
         </div>
-        <script>
-            //updateMinimumOrderError({$minimum_order},{$cart->getOrderTotal(true, $order_total_flag_without)+$cart->getOrderTotal(true, 2)})
-        </script>
         <input type="hidden" class="hidden" name="step" value="2" />
         <input type="hidden" name="back" value="{$back}" />
     </div>

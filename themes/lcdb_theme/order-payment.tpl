@@ -91,7 +91,19 @@ var txtProducts = "{l s='products' js=1}";
 						</div>
 						<div id="basket-content" class="scrollbar">
 							<table>
+								<!--Products list-->
 								{foreach from=$products item=product name=productLoop}
+									{assign var='productId' value=$product.id_product}
+									{assign var='productAttributeId' value=$product.id_product_attribute}
+									{assign var='quantityDisplayed' value=0}
+									{assign var='cannotModify' value=1}
+									{assign var='odd' value=$product@iteration%2}
+									{assign var='noDeleteButton' value=1}
+									{include file="$tpl_dir./shopping-cart-product-line.tpl"}
+								{/foreach}
+
+								<!--Gifted products list-->
+								{foreach from=$gift_products item=product name=productLoop}
 									{assign var='productId' value=$product.id_product}
 									{assign var='productAttributeId' value=$product.id_product_attribute}
 									{assign var='quantityDisplayed' value=0}
