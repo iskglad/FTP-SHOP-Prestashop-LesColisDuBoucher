@@ -417,10 +417,11 @@
         <input type="hidden" class="hidden" name="step" value="2" />
         <input type="hidden" name="back" value="{$back}" />
     </div>
+
 </div>
 <div id="continue-shopping" class="content-right">
     <input type="hidden" name="custom_relay" id="custom_relay" value="0" />
-        {if $minimum_order < ($cart->getOrderTotal(true, $order_total_flag_without)+$cart->getOrderTotal(true, 2)) && $id_zone}
+    {if $minimum_order < ($cart->getOrderTotal(true, $order_total_flag_without)+$cart->getOrderTotal(true, 2)) && $id_zone}
         <p style="height:23px;"><input type="submit" value="valider" id="submit-address" class="green-button gradient"  /></p>
     {else}
         <p style="height:23px;"><input type="submit" value="valider" id="submit-address" class="green-button gradient disabled-button" disabled/></p>
@@ -431,10 +432,10 @@
 
 <script>
     onchange();
-    var reload_carrier = {$reload_carrier};
+    /*var reload_carrier = 1;
     if (reload_carrier == 1){
         updateAddressSelection('delivery');
-    }
+    }*/
 </script>
 </div>
 </div>
