@@ -566,13 +566,11 @@ $(document).ready(function(){
             dowOffset:1,
             onSpecialDateClick: function(el, cell, date, data) {
                 el.val(date.toLocaleDateString());
-
             },
             onClick: (function(el, cell, date, data) {
                 date_delivery = date.getFullYear() + '-' +
                     (date.getMonth()+1) + '-' +
                     date.getDate();
-
 
                 $('#date_delivery').val(date_delivery);
 
@@ -582,12 +580,16 @@ $(document).ready(function(){
                 var year_value = date.getFullYear();
                 el.val(day_value+" "+monthNames[month_value]+" "+year_value);
 
+                //display error if cart contains limited discount out of the choosen date
+                var err = display_out_of_cart_rules_date_error(date_delivery, cart_rules);
+                if (err)
+                    return;
+
                 if (cell.hasClass('special'))
                     reserved_delivery_date_click_event(el, cell, date, data); //@see js/reserved_delivery_date_click_event.js
 
                 //display error and disable submit button if cart has out of date product
                 display_out_of_date_products_error(date_delivery, cell.hasClass('special'));
-
 
                 //special dates doesnt need hours input to be setted, we can return here
                  if (cell.hasClass('special'))

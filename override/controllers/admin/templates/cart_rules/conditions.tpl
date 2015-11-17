@@ -26,7 +26,11 @@
 	<strong>{l s='to'}</strong>
 	<input type="text" class="datepicker" name="date_shipping_to"
 		value="{if $currentTab->getFieldValue($currentObject, 'date_shipping_to')}{$currentTab->getFieldValue($currentObject, 'date_shipping_to')|escape}{else}{$defaultDateShippingTo}{/if}" />
-	<p class="preference_description">La période par défaut est de deux mois.</p>
+	<p class="preference_description">
+		Seul la date est prise en compte (pas l'heure).<br/>
+		Les dates indiquées sont INCLUSES. <br/>
+		La période par défaut est de deux mois.
+	</p>
 </div>
 
 

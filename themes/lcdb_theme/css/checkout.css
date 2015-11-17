@@ -776,6 +776,28 @@
 /* ************************************************************************************************
 		STYLE DU CHECKOUT - 3) DATE DE LIVRAISON
 ************************************************************************************************ */
+#warning_out_of_cart_rule_date .cart_rule_name{
+	font-weight: bold;
+}
+#warning_out_of_cart_rule_date .warning{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#warning_out_of_cart_rule_date .warning p{
+	min-height: 30px;
+	padding-top: 10px;
+}
+#warning_out_of_cart_rule_date #delete_promo{
+	color: #ad2a24;
+	text-decoration: underline;
+}
+#warning_out_of_cart_rule_date #delete_promo:hover {
+	color: red;
+}
+#warning_out_of_cart_rule_date .cart_rule_details{
+	padding-left: 39px;
+}
+
 .bloc-checkout{
 	padding: 20px 20px 0px 20px;
 }

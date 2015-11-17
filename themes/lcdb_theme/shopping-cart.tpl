@@ -40,7 +40,6 @@
 {elseif $PS_CATALOG_MODE}
     <p class="warning">{l s='This store has not accepted your new order.'}</p>
 {else}
-    {include file="$tpl_dir./errors.tpl"}
 
     {if isset($empty)}
         <p class="warning">{l s='Your shopping cart is empty.'}</p>

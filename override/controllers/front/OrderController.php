@@ -419,7 +419,6 @@ class OrderController extends OrderControllerCore
                 $id_zone = Address::getZoneByZipCode($delivery_address->postcode);
                 $zone = new Zone($id_zone);
 
-                //Tools::testVar($delivery_address);
                 //limited dates for province
                 if ( $id_zone == ID_ZONE_PROVINCE) {
                     $date_only = true;
@@ -506,12 +505,38 @@ class OrderController extends OrderControllerCore
 
                 $selectableDateRange = "[".$dateinterval."]";
 
+                //Get cart rules in Json (for shipping date limit check)
+                $cart_rules_obj = array();
+                $cart_rules = $this->context->cart->getCartRules();
+                foreach ($cart_rules as $rule) {
+                    //get rule action
+                    if ($rule['reduction_amount'] > 0)
+                        $action = "-".$rule['reduction_amount']." euros";
+                    else if ($rule['reduction_percent'] > 0)
+                        $action = "-".$rule['reduction_percent']."%";
+                    else if ($rule['gift_product']){
+                        $gift_product_name = Product::getProductName($rule['gift_product']);
+                        $action = "\"".$gift_product_name."\" offert";
+                    }
+
+                    //Make object
+                    $cart_rules_obj[] = array(
+                        'name'              => ucfirst($rule['name']),
+                        'action'            => ucfirst($action),
+                        'from'              => $rule['date_shipping_from'],
+                        'to'                => $rule['date_shipping_to'],
+                        'from_fr_string'    => strftime("%e %B", strtotime($rule['date_shipping_from'])),
+                        'to_fr_string'      => strftime("%e %B", strtotime($rule['date_shipping_to'])),
+                    );
+                }
+
                 $this->context->smarty->assign(array(
-                    'date_only' => $date_only,
-                    'limitedDays' => $limitedDays,
-                    'selectableDateRange' => $selectableDateRange,
-                    'carrier_name' => $carrier_name,
-                    'carrier_description' => $carrier_description
+                    'date_only'             => $date_only,
+                    'limitedDays'           => $limitedDays,
+                    'selectableDateRange'   => $selectableDateRange,
+                    'carrier_name'          => $carrier_name,
+                    'carrier_description'   => $carrier_description,
+                    'cart_rules_json'       => json_encode($cart_rules_obj)
                 ));
 
                 $this->autoStep();
@@ -524,6 +549,7 @@ class OrderController extends OrderControllerCore
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/get_reserved_delivery_date_sync.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/get_out_of_delivery_date_products.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/display_out_of_date_products_error.js');
+                $this->addJS(_THEME_JS_DIR_.'order_delivery_date/display_out_of_cart_rules_date_error.js');
 
                 $this->setTemplate(_PS_THEME_DIR_.'order-date-delivery.tpl');
                 break;
@@ -565,6 +591,9 @@ class OrderController extends OrderControllerCore
                 $this->_assignFreeShipping();
                 $this->_assignSummaryInformations();
                 $this->_assignOrderAdjustmentInfos();
+
+                //Check cart rules shipping limit
+
 
                 if ($this->context->cart->id_order_to_adjust > 0)
                     $this->_assignAdjustmentShippingDiscount();
@@ -772,6 +801,32 @@ class OrderController extends OrderControllerCore
                         /*Total price to get to have shipping for free*/
                         'adjust_price_to_free_shipping' => $adjust_min_fs
                     ));
+
+                    //if Summary and payment page (step 3)
+                    if ($this->step === 3) {
+                        //Check cart rule shipping limit to avoid adjustment with disallowed cart rules
+                        $rules = $this->context->cart->getCartRules();
+                        foreach ($rules as $rule){
+                            //if limit date setted setted
+                            if (strtotime($rule['date_shipping_from']) > 0 && strtotime($rule['date_shipping_to']) > 0) {
+                                //if date out of rule shipping date limits (comparing date only)
+                                if (strtotime($order_to_adjust->date_delivery) < strtotime(substr($rule['date_shipping_from'], 0, 10)) ||
+                                    strtotime($order_to_adjust->date_delivery) > strtotime(substr($rule['date_shipping_to'], 0, 10))
+                                ) {
+                                    //redirect to "basket" page (panier) with error query
+                                    Tools::redirect('index.php?controller=order&error_cart_rule_limit=1');
+                                    return 0;
+                                }
+                            }
+                        }
+                    }
+
+                    //if "basket" page (panier) AND error_cart_rule_limit setted in url query
+                    if ($this->step === 0 && Tools::getValue('error_cart_rule_limit')){
+                        //Display error
+                        $this->errors[] = Tools::displayError("La date de la commande est hors de la limite de date de vos codes de réductions");
+                        return 0;
+                    }
 
                     return 1;
                 }

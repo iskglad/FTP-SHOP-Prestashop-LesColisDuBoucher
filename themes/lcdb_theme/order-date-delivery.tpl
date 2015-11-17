@@ -11,9 +11,9 @@
 	var hEnd = '{$h_end}';
 	var date_only = {if $date_only}true{else}false{/if};
 	var limitedDays = {if $limitedDays}true{else}false{/if};
+    var cart_rules = {$cart_rules_json};
 
     var selectableDateRange = {$selectableDateRange};
-        //var selectableDateRange = '[{ from: new Date(2014, 5, 1),to: new Date(2014, 5, 17) },{ from: new Date(2014, 5, 19),]';
 	$(function() {
 		$('form').on('submit', function(e) {
 			var horaire = 'Entre '+$('[name=start_delivery_hour_0]',this).val()+' et '+$('[name=end_delivery_hour_1]',this).val();
@@ -21,9 +21,6 @@
 				horaire+= ' ou entre '+$('[name=start_delivery_hour_2]',this).val()+' et '+$('[name=end_delivery_hour_3]',this).val();
 			};
 			$('#hour_delivery').val(horaire);
-			//var date = $('input#mydate').data('glDatePicker').options.selectedDate;
-			//$('#date_delivery').val(date);
-                        
 		});
 	})
 </script>
@@ -35,12 +32,30 @@
 				<h1>Date de livraison</h1>
 				<div class="bloc-time">
 					<form action="{$link->getPageLink('order', true, NULL)}" method="post" id="date-livraison">
-						<p>Choisissez votre date de livraison:</p>
-						<div id="selected-date-hours">
+                        <p>Choisissez votre date de livraison:</p>
+                        <div id="selected-date-hours">
 							<div id="selected-date">
 								<p>Date sélectionnée :</p>
 								<input type="text" name="mydate" id="mydate" gldp-id="mydate" value="-" readonly />
 							</div>
+                            <!--Warning-->
+                            <div id='warning_out_of_cart_rule_date' class="hidden">
+                                <div class="warning">
+                                    <p>La date choisie est hors de la limite d'une de vos réductions</p>
+                                </div>
+                                <div class="cart_rule_details">
+                                    <p>
+                                        <b class="cart_rule_name"></b>
+                                        (<span class="cart_rule_action"></span>)<br/>
+                                        Livraison entre le <span class="cart_rule_from"></span>
+                                        et le <span class="cart_rule_to"></span><br/>
+                                    </p>
+                                    <p>
+                                        Veuillez choisir une autre date ou <br/><a id="delete_promo">retirer la promotion</a>.
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Hours infos-->
 							<div id="selected-hours">
                                 <!--Filled in -->
                                 {if $carrier_name && $carrier_description}
@@ -51,7 +66,7 @@
                                 {/if}
                                 <div class="hours hidden"></div> <!--@Filled in main.js line 610-->
                                 <div class="adjustment_infos hidden">
-                                    <p>Une commande est déjâ enregistrer pour cette date.<p>
+                                    <p>Une commanfde est déjâ enregistrer pour cette date.<p>
                                     <p>Commande #<span class="id_order"></span><p>
                                     <p class="delivery_hours">Entre 10h00 et 12h00<p>
                                     <p class="delivery_infos">
@@ -60,7 +75,7 @@
                                     </p>
                                     <a base_url="{$link->getBaseLink()}" href="" class="green-button adjustment_link">
                                         Ajuster cette commande
-                                    <a>
+                                    </a>
                                 </div>
 							</div>
 						</div>
@@ -74,7 +89,7 @@
 								</ul>
 							</div>
 						</div>
-                        <!--Warning-->
+                        <!--Warning product out of date-->
                         <div id='warning_out_of_date_products' class="warning hidden">
                             <p>
                                 Les produit suivants ne seront plus disponibles à la date choisie: <br/>
@@ -82,7 +97,6 @@
                                 Veuillez choisir une autre date ou retirer ces produits de la carte.
                             </p>
                         </div>
-
 						<div class="action">
 
 							<input type="hidden" name="step" value="3" />
@@ -96,21 +110,18 @@
                                             selector0 = selector[0];
                                             selector1 = selector[1];
                                             if($(".relay_infos").html() == null) {
-                                                if ($(selector0).html() != "-" && $(selector1).html() != "-" && $(".error").html() == ""
-                                            )
+                                                if ($(selector0).html() != "-" && $(selector1).html() != "-" && $(".error").html() == "" && $('#warning_out_of_cart_rule_date').hasClass('hidden'))
                                                 {
                                                     console.log("pas disabled");
                                                     $('#validate_order').prop("disabled", false);
                                                 }
-                                            else
+                                                else
                                                 {
                                                     $('#validate_order').prop("disabled", true);
                                                     console.log("disabled");
                                                 }
                                             }
                                         }, 100);
-
-
                             </script>
                             <p style="text-align: left; height: 50px;">
 							    <button class='green-button validate_order' id='validate_order' name="processCarrier" type="submit" disabled>Valider ma date de livraison</button>
