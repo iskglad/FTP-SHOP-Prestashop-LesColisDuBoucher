@@ -40,6 +40,7 @@ function display_out_of_cart_rules_date_error(date_string, cart_rules){
                 date.getTime() > to.getTime()) {
 
                 //Display error
+                $('#delete_promo').attr('id-cart-rule', cart_rules[i].id);
                 $('#warning_out_of_cart_rule_date .cart_rule_name').html(cart_rules[i].name);
                 $('#warning_out_of_cart_rule_date .cart_rule_action').html(cart_rules[i].action);
                 $('#warning_out_of_cart_rule_date .cart_rule_from').html(cart_rules[i].from_fr_string);

@@ -38,6 +38,10 @@
 								<p>Date sélectionnée :</p>
 								<input type="text" name="mydate" id="mydate" gldp-id="mydate" value="-" readonly />
 							</div>
+                            <!--Info deleting reduction-->
+                            <div id="info_cart_rule_deleted" class="success hidden">
+                                <p>La réduction a été retirée du panier. Votre commande est de <b><span id="new_order_total">54.00</span> euros</b></p>
+                            </div>
                             <!--Warning-->
                             <div id='warning_out_of_cart_rule_date' class="hidden">
                                 <div class="warning">
@@ -51,8 +55,10 @@
                                         et le <span class="cart_rule_to"></span><br/>
                                     </p>
                                     <p>
-                                        Veuillez choisir une autre date ou <br/><a id="delete_promo">retirer la promotion</a>.
+                                        Veuillez choisir une autre date ou <br/><a id="delete_promo" id-cart-rule="">retirer la réduction</a>.
                                     </p>
+                                    <i id="deleting_promo_loading_msg" class="hidden">Suppression de la reduction...</i>
+                                    <i id="deleting_promo_error" class="hidden">La réduction ne peut être supprimée</i>
                                 </div>
                             </div>
                             <!--Hours infos-->
@@ -66,7 +72,7 @@
                                 {/if}
                                 <div class="hours hidden"></div> <!--@Filled in main.js line 610-->
                                 <div class="adjustment_infos hidden">
-                                    <p>Une commanfde est déjâ enregistrer pour cette date.<p>
+                                    <p>Une commande est déjâ enregistrer pour cette date.<p>
                                     <p>Commande #<span class="id_order"></span><p>
                                     <p class="delivery_hours">Entre 10h00 et 12h00<p>
                                     <p class="delivery_infos">

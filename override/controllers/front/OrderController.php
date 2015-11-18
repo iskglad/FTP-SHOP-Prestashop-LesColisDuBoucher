@@ -199,6 +199,14 @@ class OrderController extends OrderControllerCore
                             die();
                             break;
 
+                        //Delete cart rule from cart (used for dates that are out of rule shipping date)
+                        //@Called from order_delivery_date/delete_cart_rule.js
+                        case 'deleteCartRuleFromCart':
+                            $res = $this->deleteCartRuleFromCart();
+                            echo json_encode($res);
+                            die();
+                            break;
+
                         //Save order message from order payment summary page (page where customer chose payment method)
                         //@Called from order_payment/order_message.js
                         case 'updateOrderMessage':
@@ -522,6 +530,7 @@ class OrderController extends OrderControllerCore
 
                     //Make object
                     $cart_rules_obj[] = array(
+                        'id'                => $rule['id_cart_rule'],
                         'name'              => ucfirst($rule['name']),
                         'action'            => ucfirst($action),
                         'from'              => $rule['date_shipping_from'],
@@ -546,11 +555,13 @@ class OrderController extends OrderControllerCore
                 $this->_assignZone();
 
                 //Set medias
+                $this->addJS(_THEME_JS_DIR_.'config/constant.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/reserved_delivery_date_click_event.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/get_reserved_delivery_date_sync.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/get_out_of_delivery_date_products.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/display_out_of_date_products_error.js');
                 $this->addJS(_THEME_JS_DIR_.'order_delivery_date/display_out_of_cart_rules_date_error.js');
+                $this->addJS(_THEME_JS_DIR_.'order_delivery_date/delete_cart_rule.js');
 
                 $this->setTemplate(_PS_THEME_DIR_.'order-date-delivery.tpl');
                 break;
@@ -1108,4 +1119,31 @@ class OrderController extends OrderControllerCore
         return $orders;
     }
 
+    public function deleteCartRuleFromCart(){
+        //init vars
+        $res = array(
+            'success'                       => 0,
+            "new_order_total_with_shipping"     => 0,
+            "new_order_total_without_shipping"  => 0
+        );
+        $cart = $this->context->cart; //get cart
+        $id_cart_rule = Tools::getValue('id_cart_rule'); //get url query
+        //Check error
+        if (!$id_cart_rule){
+            $res['success'] = 0;
+            return $res;
+        }
+
+        //delete rule from cart
+        $success = $cart->removeCartRule($id_cart_rule);
+        if ($success){
+            //update res
+            $res['success'] = 1;
+            //update order price
+            $res['new_order_total_without_shipping'] = $cart->getOrderTotalPriceWithTaxAndDiscount();
+            $res['new_order_total_with_shipping'] = $cart->getOrderTotal(true, Cart::BOTH, null, null, false);
+        }
+
+        return $res;
+    }
 }

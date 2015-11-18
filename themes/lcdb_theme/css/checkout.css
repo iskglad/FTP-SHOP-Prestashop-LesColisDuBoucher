@@ -776,6 +776,14 @@
 /* ************************************************************************************************
 		STYLE DU CHECKOUT - 3) DATE DE LIVRAISON
 ************************************************************************************************ */
+.content-checkout #date-livraison .success{
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.content-checkout #date-livraison .success p{
+	min-height: 30px;
+	padding-top: 10px;
+}
 #warning_out_of_cart_rule_date .cart_rule_name{
 	font-weight: bold;
 }

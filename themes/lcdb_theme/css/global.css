@@ -4462,7 +4462,7 @@ ul.idTabs li {
 	margin-bottom:0px;
 }
 .content-checkout #selected-hours{
-	margin-top: 30px;
+	margin-top: 15px;
 }
 .content-checkout #selected-hours .infos-hours{
 	margin-bottom: 20px;
@@ -4559,7 +4559,7 @@ ul.idTabs li {
 .ie7 .content-checkout p.infos-preferences{
 	overflow: auto;
 }
-.content-checkout .warning{
+.content-checkout .warning, .content-checkout #date-livraison .success{
 	clear:both;
 	background: none;
 	border: none;
@@ -4579,6 +4579,22 @@ ul.idTabs li {
 	text-decoration: underline;
 }
 .content-checkout .warning .bold{
+	font-style: italic;
+	font-weight: bolder;
+}
+.content-checkout #date-livraison .success p{
+	margin:0;
+	padding:0px 0px 0px 40px;
+	color: #4d9810;
+	font-style: italic;
+	font-size: 16px;
+	background: url('../img/asset/img_solo/check_small.png') no-repeat 0 center;
+}
+.content-checkout #date-livraison .success p a{
+	color: #4d9810;
+	text-decoration: underline;
+}
+.content-checkout #date-livraison .success .bold{
 	font-style: italic;
 	font-weight: bolder;
 }
