@@ -49,8 +49,8 @@ class CartRule extends CartRuleCore
             'name' => 					array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isCleanHtml', 'required' => true, 'size' => 254),
 
             //custom
-            'date_shipping_from' =>     array('type' => self::TYPE_DATE, 'validate' => 'isDate'),
-            'date_shipping_to' => 		array('type' => self::TYPE_DATE, 'validate' => 'isDate'),
+            'date_shipping_from' =>     array('type' => self::TYPE_DATE),
+            'date_shipping_to' => 		array('type' => self::TYPE_DATE),
         ),
     );
 
