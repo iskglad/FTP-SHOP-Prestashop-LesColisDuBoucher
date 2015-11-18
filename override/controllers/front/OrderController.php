@@ -509,6 +509,7 @@ class OrderController extends OrderControllerCore
                 $cart_rules_obj = array();
                 $cart_rules = $this->context->cart->getCartRules();
                 foreach ($cart_rules as $rule) {
+                    $action = '';
                     //get rule action
                     if ($rule['reduction_amount'] > 0)
                         $action = "-".$rule['reduction_amount']." euros";
