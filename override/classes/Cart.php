@@ -356,7 +356,7 @@ class Cart extends CartCore
                 //set values
             $cart_rule->code = $rule_code;
             $cart_rule->name = $rule_name;
-            $cart_rule->id_customer = (int)$this->id_customer;
+            $cart_rule->id_customer = (int)($this->id_customer);
             $cart_rule->quantity = 1;
             $cart_rule->quantity_per_user = 1;
             $cart_rule->priority = 5;
@@ -370,7 +370,12 @@ class Cart extends CartCore
                 //add to DB
             $cart_rule->add();
                 //add to Cart
-            $this->addCartRule((int)$cart_rule->id);
+            $this->addCartRule((int)($cart_rule->id));
+        }
+        //if the rule exists, if it s not added in current card
+        else if (!($this->getDiscountsCustomer($id_cart_rule))){
+            //add to Cart
+            $this->addCartRule($id_cart_rule);
         }
     }
 
