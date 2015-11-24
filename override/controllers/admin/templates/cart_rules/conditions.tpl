@@ -29,7 +29,7 @@
 	<p class="preference_description">
 		Seul la date est prise en compte (pas l'heure).<br/>
 		Les dates indiquées sont INCLUSES. <br/>
-		La période par défaut est de deux mois.
+		La période par défaut est d'un an.
 	</p>
 </div>
 
