@@ -14,7 +14,7 @@
 	<strong>{l s='to'}</strong>
 	<input type="text" class="datepicker" name="date_to"
 		   value="{if $currentTab->getFieldValue($currentObject, 'date_to')}{$currentTab->getFieldValue($currentObject, 'date_to')|escape}{else}{$defaultDateTo}{/if}" />
-	<p class="preference_description">{l s='Default period is one month.'}</p>
+	<p class="preference_description">La période par défaut est d'un an.</p>
 </div>
 
 <!--Shipping Date valid interval-->
