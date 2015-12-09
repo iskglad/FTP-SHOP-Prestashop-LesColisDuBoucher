@@ -24,6 +24,9 @@ class CategoryController extends CategoryControllerCore
 			case ID_CATEGORY_MATUREES:
 				Tools::redirect(ID_CATEGORY_YMLB.'-le-bourdonnec');
 				break;
+			case ID_CATEGORY_SPECIAL_FETE:
+				Tools::redirect(ID_CATEGORY_REPAS_DE_FETE.'-repas-de-fetes');
+				break;
 			default: 
 				parent::init();
 				break;
