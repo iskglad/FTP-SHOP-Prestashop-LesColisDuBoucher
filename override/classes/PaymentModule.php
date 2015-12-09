@@ -138,17 +138,12 @@ abstract class PaymentModule extends PaymentModuleCore
                     $order->total_discounts_tax_incl = (float)abs($this->context->cart->getOrderTotal(true, Cart::ONLY_DISCOUNTS, $order->product_list, $id_carrier));
                     $order->total_discounts = $order->total_discounts_tax_incl;
 
-                    if (!is_null($carrier) && Validate::isLoadedObject($carrier)) {
-                        $tax = new Tax(ID_TAXE_RULE_CARRIER);//$carrier->getTaxesRate(new Address($this->context->cart->{Configuration::get('PS_TAX_ADDRESS_TYPE')}));
-                        if ($tax)
-                            $order->carrier_tax_rate = $tax->rate;
-                    }
-
-                    //$order->total_shipping_tax_excl = (float)$this->context->cart->getPackageShippingCost((int)$id_carrier, false, null, $order->product_list);
+                    $order->total_shipping_tax_excl = (float)$this->context->cart->getPackageShippingCost((int)$id_carrier, false, null, $order->product_list);
                     $order->total_shipping_tax_incl = (float)$this->context->cart->getPackageShippingCost((int)$id_carrier, true, null, $order->product_list);
-                    $shipping_ht = (float)$order->total_shipping_tax_incl * 100 / (100 + $order->carrier_tax_rate); //for a 20% rate, 120% is the TTC, then get the 100% wich is the HT
-                    $order->total_shipping_tax_excl = (float)Tools::ps_round($shipping_ht, 2); //round to pass isPrice validation
                     $order->total_shipping = $order->total_shipping_tax_incl;
+
+                    if (!is_null($carrier) && Validate::isLoadedObject($carrier))
+                        $order->carrier_tax_rate = $carrier->getTaxesRate(new Address($this->context->cart->{Configuration::get('PS_TAX_ADDRESS_TYPE')}));
 
                     $order->total_wrapping_tax_excl = (float)abs($this->context->cart->getOrderTotal(false, Cart::ONLY_WRAPPING, $order->product_list, $id_carrier));
                     $order->total_wrapping_tax_incl = (float)abs($this->context->cart->getOrderTotal(true, Cart::ONLY_WRAPPING, $order->product_list, $id_carrier));

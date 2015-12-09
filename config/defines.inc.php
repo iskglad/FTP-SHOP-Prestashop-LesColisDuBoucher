@@ -74,8 +74,6 @@ define('ID_ORDER_STATE_WAITING_PAYPAL_PAYMENT', 11);
 
 define('ID_CARRIER_REFERENCE_LIVRAISON_LE_SOIR', 117);
 
-define('ID_TAXE_RULE_CARRIER', 6);
-
 
 define('ERROR_MSG_EMPTY_POSTCODE', 'Erreur: Une de vos adresses est incomplète. <br/>Veuillez nous contacter par mail contact@lescolisduboucher.com <br/>ou au 09 72 42 51 66 (appel non surtaxé).');
 
