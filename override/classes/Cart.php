@@ -364,7 +364,7 @@ class Cart extends CartCore
             $cart_rule->minimum_amount_currency = (int)$this->id_currency;
             $cart_rule->reduction_currency = (int)$this->id_currency;
             $cart_rule->date_from = date('Y-m-d H:i:s', time());
-            $cart_rule->date_to = date('Y-m-d H:i:s', time() + 1800);
+            $cart_rule->date_to = date('Y-m-d H:i:s', time() + 180000);
             $cart_rule->active = 1;
 
                 //add to DB
