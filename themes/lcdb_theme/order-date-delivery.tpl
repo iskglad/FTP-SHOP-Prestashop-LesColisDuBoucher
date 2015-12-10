@@ -116,7 +116,9 @@
                                             selector0 = selector[0];
                                             selector1 = selector[1];
                                             if($(".relay_infos").html() == null) {
-                                                if ($(selector0).html() != "-" && $(selector1).html() != "-" && $(".error").html() == "" && $('#warning_out_of_cart_rule_date').hasClass('hidden'))
+                                                if ($(selector0).html() != "-" && $(selector1).html() != "-" && $(".error").html() == ""
+                                                        && $('#warning_out_of_cart_rule_date').hasClass('hidden')
+                                                        && $('#warning_out_of_date_products').hasClass('hidden'))
                                                 {
                                                     console.log("pas disabled");
                                                     $('#validate_order').prop("disabled", false);
