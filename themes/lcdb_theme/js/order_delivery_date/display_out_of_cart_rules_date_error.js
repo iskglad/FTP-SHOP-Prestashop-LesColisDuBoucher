@@ -33,11 +33,11 @@ function display_out_of_cart_rules_date_error(date_string, cart_rules){
         from = new Date(cart_rules[i].from.substr(0, 10));
         to = new Date(cart_rules[i].to.substr(0, 10));
 
-        //if limit set
-        if (!isNaN(from.getTime()) && !isNaN(to.getTime())) {
-            //if date out of limit
-            if (date.getTime() < from.getTime() ||
-                date.getTime() > to.getTime()) {
+        //if limit set AND not freeShipping setted automatically
+        if (!isNaN(from.getTime()) && !isNaN(to.getTime()) && cart_rules[i].name != "Frais de livraison offerts") {
+             //if date out of limit
+             if (date.getTime() < from.getTime() ||
+                 date.getTime() > to.getTime()) {
 
                 //Display error
                 $('#delete_promo').attr('id-cart-rule', cart_rules[i].id);
