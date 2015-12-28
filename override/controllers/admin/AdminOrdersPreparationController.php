@@ -315,7 +315,8 @@ class AdminOrdersPreparationController extends AdminController{
         $this->shop_carriers = Carrier::getCarriersWithoutRelays($this->context->language->id);
 
         //get order global infos
-        $orders_total = $this->_getTotal();
+        $orders_total = $this->_getTotalProductWt(); //Product total
+        $orders_total_paid = $this->_getTotalPaid(); //Product total + Shipping - Discount
 
         $orders_total_average = 0;
         if (count($this->_list) > 0)
@@ -344,6 +345,7 @@ class AdminOrdersPreparationController extends AdminController{
 
             //totals
             'orders_total'              => $orders_total,
+            'orders_total_paid'         => $orders_total_paid,
             'orders_total_average'      => $orders_total_average,
             'orders_total_weight'       => $orders_total_weight,
             'orders_count'              => count($this->_list),
@@ -389,10 +391,17 @@ class AdminOrdersPreparationController extends AdminController{
     //==================================================================
     //UTILS
     //==================================================================
-    public function _getTotal(){
+    public function _getTotalProductWt(){
         $total = 0;
         foreach ($this->_list as $order){
             $total += $order['total_products_wt'];
+        }
+        return $total;
+    }
+    public function _getTotalPaid(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            $total += $order['total_paid_wt'];
         }
         return $total;
     }

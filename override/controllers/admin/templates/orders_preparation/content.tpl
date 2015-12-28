@@ -175,7 +175,8 @@
 <fieldset>
     <ul>
         <li>Nombre de commandes: <strong>{$orders_count}</strong></li>
-        <li>Total: <strong>{$orders_total|string_format:"%.2f"} euros</strong></li>
+        <li>Total encaissé: <strong>{$orders_total_paid|string_format:"%.2f"} euros</strong></li>
+        <li>Total produits: <strong>{$orders_total|string_format:"%.2f"} euros</strong></li>
         <li>Panier moyen: <strong>{$orders_total_average|string_format:"%.2f"} euros</strong></li>
         <li>Poids total produits: <strong>{$orders_total_weight} kg</strong></li>
         <li>Poids total Colis (Poids produits + 2.5kg/pain de glace): <strong>{$orders_colis_total_weight} kg</strong></li>
