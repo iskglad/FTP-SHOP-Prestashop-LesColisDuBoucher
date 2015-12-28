@@ -2823,6 +2823,7 @@ nav.secondary-menu{
 #center_column span.big_image#big_poule 	{ background: url('../img/asset/img_solo/big_poulet.png') no-repeat; }
 #center_column span.big_image#big_dinde 	{ background: url('../img/asset/img_solo/big_dinde.png') no-repeat; }
 #center_column span.big_image#big_pigeon 	{ background: url('../img/asset/img_solo/big_pigeon.png') no-repeat; }
+#center_column span.big_image#big_repas-de-fetes 	{ background: url('../img/asset/img_solo/big-sapin-rouge.png') no-repeat; }
 
 .voir_tout {
     cursor:pointer;
