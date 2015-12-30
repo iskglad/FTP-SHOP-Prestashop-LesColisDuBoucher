@@ -11,8 +11,8 @@ class CategoryController extends CategoryControllerCore
 		switch ($id_category) {
             case ID_CATEGORY_MAIN:
                 if (Product::shopHasAvailablePromoProducts())
-                    //Tools::redirect('index.php?id_category='.ID_CATEGORY_PROMOTIONS.'&controller=category');
-					Tools::redirect(ID_CATEGORY_REPAS_DE_FETE.'-repas-de-fetes');
+                    Tools::redirect('index.php?id_category='.ID_CATEGORY_PROMOTIONS.'&controller=category');
+					//Tools::redirect(ID_CATEGORY_REPAS_DE_FETE.'-repas-de-fetes');
                 else
                     Tools::redirect('index.php?id_category='.ID_CATEGORY_BOEUF.'&controller=category');
                 break;

@@ -1076,12 +1076,16 @@ class OrderController extends OrderControllerCore
 
         foreach ($products as $product){
 
-            //get product end date
+            //get product begin and end date
             $comb = new Combination($product['id_product_attribute']);
             $product_end_date = strtotime($comb->available_date);
+            $product_begin_date = strtotime($comb->begin_date);
 
             //if ended date is before ordered date
-            if (($product_end_date < $date_delivery && $product_end_date > 0)){
+            //OR begin date is after ordered date
+            if (($product_end_date < $date_delivery && $product_end_date > 0) ||
+                ($product_begin_date > $date_delivery && $product_begin_date > 0)
+            ){
                 array_push($passedDateProducts, $product);
             }
         }
