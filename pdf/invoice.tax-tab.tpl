@@ -47,16 +47,24 @@
 				 <td style="width: 20%; text-align: right;">{$rate|string_format:"%.2f"} %</td>
 				{if !$use_one_after_another_method}
 				 <td style="width: 20%; text-align: right;">
-					 {if isset($is_order_slip) && $is_order_slip}- {/if}{displayPrice currency=$order->id_currency price=$product_tax_infos.total_price_tax_excl}
+					 {if isset($is_order_slip) && $is_order_slip}- {/if}
+					 {displayPrice currency=$order->id_currency price=$product_tax_infos.total_price_tax_excl}
 				 </td>
 				{/if}
-				 <td style="width: 20%; text-align: right;">{if isset($is_order_slip) && $is_order_slip}- {/if}{displayPrice currency=$order->id_currency price=$product_tax_infos.total_amount}</td>
+				 <td style="width: 20%; text-align: right;">
+					 {if isset($is_order_slip) && $is_order_slip}- {/if}
+					 {displayPrice currency=$order->id_currency price=$product_tax_infos.total_amount}
+				 </td>
 				</tr>
 				{/foreach}
 				{/if}
 
 				{if isset($shipping_tax_breakdown)}
 				{foreach $shipping_tax_breakdown as $shipping_tax_infos}
+					{if $order->free_shipping_discount}
+						{$shipping_tax_infos.total_tax_excl=0}
+						{$shipping_tax_infos.total_amount=0}
+					{/if}
 				<tr style="line-height:6px;background-color:{cycle values='#FFF,#DDD'};">
 				 <td style="width: 30%">{l s='Shipping' pdf='true'}</td>
 				 <td style="width: 20%; text-align: right;">{$shipping_tax_infos.rate|string_format:"%d"} %</td>
