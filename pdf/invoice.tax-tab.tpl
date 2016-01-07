@@ -38,6 +38,7 @@
 						<td style="text-align: right; background-color: #4D4D4D; color: #FFF; padding-left: 10px; font-weight: bold; width: 20%">{l s='Total Tax Excl' pdf='true'}</td>
 					{/if}
 					<td style="text-align: right; background-color: #4D4D4D; color: #FFF; padding-left: 10px; font-weight: bold; width: 20%">{l s='Total Tax' pdf='true'}</td>
+					<td style="text-align: right; background-color: #4D4D4D; color: #FFF; padding-left: 10px; font-weight: bold; width: 20%">{l s='Total TTC' pdf='true'}</td>
 				</tr>
 
 				{if isset($product_tax_breakdown)}
@@ -48,22 +49,28 @@
 				{if !$use_one_after_another_method}
 				 <td style="width: 20%; text-align: right;">
 					 {if isset($is_order_slip) && $is_order_slip}- {/if}
-					 {displayPrice currency=$order->id_currency price=$product_tax_infos.total_price_tax_excl}
+					 {displayPrice currency=$order->id_currency price=$order->total_products_wt / (1 + ($rate/100))}
 				 </td>
 				{/if}
 				 <td style="width: 20%; text-align: right;">
 					 {if isset($is_order_slip) && $is_order_slip}- {/if}
-					 {displayPrice currency=$order->id_currency price=$product_tax_infos.total_amount}
+					 {displayPrice currency=$order->id_currency price=($order->total_products_wt  - ($order->total_products_wt / (1 + ($rate/100))))}
 				 </td>
+					<td style="width: 20%; text-align: right;">
+						{if isset($is_order_slip) && $is_order_slip}- {/if}
+						{displayPrice currency=$order->id_currency price=$order->total_products_wt}
+					</td>
 				</tr>
 				{/foreach}
 				{/if}
 
 				{if isset($shipping_tax_breakdown)}
 				{foreach $shipping_tax_breakdown as $shipping_tax_infos}
+					{assign var=total_shipping value=$order->total_shipping}
 					{if $order->free_shipping_discount}
 						{$shipping_tax_infos.total_tax_excl=0}
 						{$shipping_tax_infos.total_amount=0}
+						{$total_shipping=0}
 					{/if}
 				<tr style="line-height:6px;background-color:{cycle values='#FFF,#DDD'};">
 				 <td style="width: 30%">{l s='Shipping' pdf='true'}</td>
@@ -72,7 +79,12 @@
 					 <td style="width: 20%; text-align: right;">{if isset($is_order_slip) && $is_order_slip}- {/if}{displayPrice currency=$order->id_currency price=$shipping_tax_infos.total_tax_excl}</td>
 				{/if}
 				 <td style="width: 20%; text-align: right;">{if isset($is_order_slip) && $is_order_slip}- {/if}{displayPrice currency=$order->id_currency price=$shipping_tax_infos.total_amount}</td>
+					<td style="width: 20%; text-align: right;">
+						{if isset($is_order_slip) && $is_order_slip}- {/if}
+						{displayPrice currency=$order->id_currency price=$total_shipping}
+					</td>
 				</tr>
+
 				{/foreach}
 				{/if}
 
