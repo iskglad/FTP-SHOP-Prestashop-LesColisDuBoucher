@@ -550,6 +550,7 @@ class OrderController extends OrderControllerCore
                 ));
 
                 $this->autoStep();
+                $this->_assignFreeShipping();
                 $this->_assignCarrier();
                 $this->processCarrier();
                 $this->_assignZone();
