@@ -24,7 +24,7 @@
 *}
 <table>
 	<tr>
-		<td style="text-align: center; font-size: 6pt; color: #444">
+		<td style="text-align: center; font-size: 8pt; color: #444">
             {if $available_in_your_account}
                 {l s='An electronic version of this invoice is available in your account. To access it, log in to our website using your e-mail address and password (which you created when placing your first order).' pdf='true'}             
     			<br />
@@ -49,6 +49,8 @@
 
             {if isset($free_text)}
     			{$free_text|escape:'htmlall':'UTF-8'}<br />
+				LCDB SAS au capital de 35700 € - RCS Paris : 52162849500017. N° TVA FR17521628495
+				82 rue de Rome 75008 Paris. Tel 09 72 42 51 66. contact@lescolisduboucher.com
             {/if}
 		</td>
 	</tr>
