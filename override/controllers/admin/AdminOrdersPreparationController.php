@@ -92,9 +92,18 @@ class AdminOrdersPreparationController extends AdminController{
             a.date_delivery         as  delivery_date,
             a.hour_delivery         as  hours,
             a.total_products_wt     as  total_products_wt,
+            a.total_products        as  total_products_ht,
             a.total_discounts_tax_incl  as total_discounts_wt,
+            a.total_discounts_tax_excl  as total_discounts_ht,
             a.total_paid_tax_incl   as  total_paid_wt,
             a.message               as  message,
+            a.carrier_tax_rate      as  carrier_tax_rate,
+            a.total_shipping_tax_incl as total_shipping_wt,
+            a.total_shipping_tax_excl as total_shipping_ht,
+            a.free_shipping_discount  as is_free_shipping,
+
+
+
 
             da.firstname            as  delivery_first_name,
             da.lastname             as  delivery_last_name,
@@ -324,6 +333,18 @@ class AdminOrdersPreparationController extends AdminController{
 
         $orders_total_weight = $this->_getTotalWeight();
 
+        //Compta Sum Up
+        $orders_total_products_ht = $this->_getTotalProductHt(); //Product Ht total
+        $orders_total_products_tva = $orders_total - $orders_total_products_ht; //total produit ttc - total produit HT
+
+        $total_discounts_ht = $this->_getTotalDiscountHt();
+        $total_discounts_wt = $this->_getTotalDiscountWt();
+        $total_discounts_tva = $total_discounts_wt - $total_discounts_ht;
+
+        $total_shipping_ht = $this->_getTotalShippingHt();
+        $total_shipping_wt = $this->_getTotalShippingWt();
+        $total_shipping_tva = $total_shipping_wt - $total_shipping_ht;
+
         //Updating values
         if (Tools::getValue("update") && Tools::getValue("id_order"))
             $this->update_order();
@@ -350,6 +371,16 @@ class AdminOrdersPreparationController extends AdminController{
             'orders_total_weight'       => $orders_total_weight,
             'orders_count'              => count($this->_list),
             'orders_colis_total_weight' => $orders_total_weight + (count($this->_list) * 2.5),
+
+            //compta sum up
+            'orders_total_products_ht'  => $orders_total_products_ht,
+            'orders_total_products_tva' => $orders_total_products_tva,
+            'total_discounts_ht'        => $total_discounts_ht,
+            'total_discounts_wt'        => $total_discounts_wt,
+            'total_discounts_tva'       => $total_discounts_tva,
+            'total_shipping_ht'         => $total_shipping_ht,
+            'total_shipping_wt'         => $total_shipping_wt,
+            'total_shipping_tva'        => $total_shipping_tva,
 
             //settings
             'token'                     => Tools::getValue("token"),
@@ -391,13 +422,6 @@ class AdminOrdersPreparationController extends AdminController{
     //==================================================================
     //UTILS
     //==================================================================
-    public function _getTotalProductWt(){
-        $total = 0;
-        foreach ($this->_list as $order){
-            $total += $order['total_products_wt'];
-        }
-        return $total;
-    }
     public function _getTotalPaid(){
         $total = 0;
         foreach ($this->_list as $order){
@@ -405,6 +429,81 @@ class AdminOrdersPreparationController extends AdminController{
         }
         return $total;
     }
+    //Total products
+    public function _getTotalProductWt(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            $total += $order['total_products_wt'];
+
+            if ($order['total_discounts_wt'] > 0) { //if order has discount
+                //take out gift product price
+                $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], true); //get prices with taxes
+            }
+        }
+
+        return $total;
+    }
+    public function _getTotalProductHt(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            $total += $order['total_products_ht'];
+
+            if ($order['total_discounts_wt'] > 0) { //if order has discount
+                //take out gift product price
+                $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], false); //get prices with taxes
+            }
+        }
+        return $total;
+    }
+    //Total discounts
+    public function _getTotalDiscountHt(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            $total += $order['total_discounts_ht'];
+
+            if ($order['total_discounts_wt'] > 0) { //if order has discount
+                //take out gift product price
+                $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], false); //get prices with taxes
+            }
+        }
+        return $total;
+    }
+    public function _getTotalDiscountWt(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            $total += $order['total_discounts_wt'];
+
+            if ($order['total_discounts_wt'] > 0) { //if order has discount
+                //take out gift product price
+                $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], true); //get prices with taxes
+            }
+        }
+        return $total;
+    }
+    //Total shipping
+    public function _getTotalShippingHt(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            if (!$order['is_free_shipping']) //if shipping is NOT free
+            {
+                if ($order['carrier_tax_rate'] == 0) //if tax rate not set (for old orders)
+                    $total += ($order['total_shipping_wt'] / (1 + 0.20)); //Calculate using current defaut taxe
+                else
+                    $total += $order['total_shipping_ht'];
+            }
+        }
+        return $total;
+    }
+    public function _getTotalShippingWt(){
+        $total = 0;
+        foreach ($this->_list as $order){
+            if (!$order['is_free_shipping']) //if shipping is NOT free
+                $total += $order['total_shipping_wt'];
+        }
+        return $total;
+    }
+
+    //Weight
     public function _setOrdersWeight(){
         foreach ($this->_list as &$order){
             $total = 0;

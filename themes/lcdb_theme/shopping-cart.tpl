@@ -148,7 +148,7 @@
     <!-- =========================/*Reduction==========================-->
     <div id="bloc-reduction">
     <!--td colspan="5" id="cart_voucher" class="cart_voucher"-->
-    {if $voucherAllowed}
+    {if $voucherAllowed && !$is_adjustment}
         <div id="cart_voucher" class="table_block">
         {if isset($errors_discount) && $errors_discount}
             <ul class="error">

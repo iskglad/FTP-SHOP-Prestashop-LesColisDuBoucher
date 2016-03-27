@@ -170,5 +170,25 @@ class Order extends OrderCore
         return strtotime('next '.$nextAvailableDay, $now);
     }
 
+	public static function getOrderGiftProductsTotalPrice($order_id, $price_wt = true){
+		$order = new Order($order_id);
+		if (!$order->id) //if order not found
+			return 0;
+
+		$total = 0;
+
+		$rules = $order->getCartRules();
+		foreach ($rules as $rule){
+			if ($rule['gift_product_attribute'] > 0) { //if rule has a gift product
+				$id_product = $rule['gift_product'];
+				$id_product_attribute = $rule['gift_product_attribute'];
+
+				$total += Product::getPriceStatic($id_product, $price_wt, $id_product_attribute);
+			}
+		}
+
+		return $total;
+	}
+
 }
 

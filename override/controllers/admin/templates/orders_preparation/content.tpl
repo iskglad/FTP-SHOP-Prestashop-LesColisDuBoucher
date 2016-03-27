@@ -185,10 +185,15 @@
 <br>
 
 
+<!--====================
+    Compta details
+====================-->
+{include file="./compta_sum_up.tpl"}
+<br>
 
-
-
-
+<!--====================
+    Order List Section
+====================-->
 
 <form method="post" action="index.php?controller=AdminOrdersPreparation&amp;token={$token}" class="form">
 <input type="hidden" id="submitFilterorder" name="submitFilterorder" value="0">
