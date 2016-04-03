@@ -190,5 +190,18 @@ class Order extends OrderCore
 		return $total;
 	}
 
+	public static function getFreeShippingDiscount($order_id){
+		$order = new Order($order_id);
+		if (!$order->id) //if order not found
+			return 0;
+
+		$rules = $order->getCartRules();
+		foreach ($rules as $rule){
+			if ($rule['free_shipping'])
+				return $rule;
+		}
+		return 0;
+	}
+
 }
 

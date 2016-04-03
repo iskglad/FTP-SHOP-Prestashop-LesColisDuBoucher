@@ -484,7 +484,7 @@ class AdminOrdersPreparationController extends AdminController{
     public function _getTotalShippingHt(){
         $total = 0;
         foreach ($this->_list as $order){
-            if (!$order['is_free_shipping']) //if shipping is NOT free
+            if (!Order::getFreeShippingDiscount($order['id_order'])) //if shipping is NOT free
             {
                 if ($order['carrier_tax_rate'] == 0) //if tax rate not set (for old orders)
                     $total += ($order['total_shipping_wt'] / (1 + 0.20)); //Calculate using current defaut taxe
@@ -497,7 +497,7 @@ class AdminOrdersPreparationController extends AdminController{
     public function _getTotalShippingWt(){
         $total = 0;
         foreach ($this->_list as $order){
-            if (!$order['is_free_shipping']) //if shipping is NOT free
+            if (!Order::getFreeShippingDiscount($order['id_order'])) //if shipping is NOT free
                 $total += $order['total_shipping_wt'];
         }
         return $total;
