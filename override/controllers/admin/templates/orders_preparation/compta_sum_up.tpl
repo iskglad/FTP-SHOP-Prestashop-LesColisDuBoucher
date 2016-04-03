@@ -48,6 +48,6 @@
             </tr>
         </tbody>
     </table>
-    <legend>* Les produits offerts ne sont pas comptés</legend>
+    <legend>* Les produits offerts sont comptés dans les produits et retirés en réduction</legend>
     <legend>Calcul manuel comparatif: Produit HT = Produit TTC / 1.055 = {$orders_total} / 1.055 = {$orders_total/1.055}</legend>
 </section>

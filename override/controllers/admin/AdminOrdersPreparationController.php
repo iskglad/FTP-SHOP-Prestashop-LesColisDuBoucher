@@ -435,10 +435,10 @@ class AdminOrdersPreparationController extends AdminController{
         foreach ($this->_list as $order){
             $total += $order['total_products_wt'];
 
-            if ($order['total_discounts_wt'] > 0) { //if order has discount
+            /*if ($order['total_discounts_wt'] > 0) { //if order has discount
                 //take out gift product price
                 $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], true); //get prices with taxes
-            }
+            }*/
         }
 
         return $total;
@@ -448,10 +448,10 @@ class AdminOrdersPreparationController extends AdminController{
         foreach ($this->_list as $order){
             $total += $order['total_products_ht'];
 
-            if ($order['total_discounts_wt'] > 0) { //if order has discount
+            /*if ($order['total_discounts_wt'] > 0) { //if order has discount
                 //take out gift product price
                 $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], false); //get prices with taxes
-            }
+            }*/
         }
         return $total;
     }
@@ -459,12 +459,12 @@ class AdminOrdersPreparationController extends AdminController{
     public function _getTotalDiscountHt(){
         $total = 0;
         foreach ($this->_list as $order){
-            $total += $order['total_discounts_ht'];
+            $total += ($order['total_discounts_wt'] / 1.055);
 
-            if ($order['total_discounts_wt'] > 0) { //if order has discount
+            /*if ($order['total_discounts_wt'] > 0) { //if order has discount
                 //take out gift product price
                 $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], false); //get prices with taxes
-            }
+            }*/
         }
         return $total;
     }
@@ -473,10 +473,10 @@ class AdminOrdersPreparationController extends AdminController{
         foreach ($this->_list as $order){
             $total += $order['total_discounts_wt'];
 
-            if ($order['total_discounts_wt'] > 0) { //if order has discount
+            /*if ($order['total_discounts_wt'] > 0) { //if order has discount
                 //take out gift product price
                 $total -= Order::getOrderGiftProductsTotalPrice($order['id_order'], true); //get prices with taxes
-            }
+            }*/
         }
         return $total;
     }
