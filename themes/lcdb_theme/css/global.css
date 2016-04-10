@@ -1977,7 +1977,7 @@ color: #4D9810;
 }
 
 .content .order-meat-message .label span#lrb{
-	float:left;
+	float:right;
 }
 .content .order-meat-message .label span#ymlb{
 	float:right;
@@ -2004,6 +2004,14 @@ color: #4D9810;
 	background: url('../img/photos/label-rouge.png') no-repeat 0 0;
 	width: 82px;
 	height: 59px;
+	margin-left: 22px;
+	margin-right: 40px;
+}
+.content .order-meat-message .label span#lrb ul li:last-child{
+	background: url('../img/asset/img_solo/stamp_auvergne_flag.png') no-repeat 0 0;
+	background-size: contain;
+	width: 100px;
+	height: 75px;
 	margin-left: 22px;
 	margin-right: 40px;
 }
